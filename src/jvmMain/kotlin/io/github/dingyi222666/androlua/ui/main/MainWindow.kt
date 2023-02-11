@@ -84,7 +84,6 @@ fun WindowScope.MainTitleBar(state: MainState) {
 
 @Composable
 fun MainTitleBarPopupMenu(state: MainState, expanded: Boolean, onDismissRequest: () -> Unit = {}) {
-
     val menuItems = mapOf(
         "文件" to listOf(
             "新建",
