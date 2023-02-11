@@ -1,8 +1,7 @@
-package io.github.dingyi222666.androlua.ui.common
+package io.github.dingyi222666.androlua.ui.view
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
-import androidx.compose.material.CursorDropdownMenu
 import androidx.compose.material3.DropdownMenu
 import androidx.compose.material3.DropdownMenuItem
 import androidx.compose.material3.Icon
@@ -13,12 +12,10 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.layout.onGloballyPositioned
-import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.DpOffset
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.toSize
-import jdk.jfr.Enabled
 
 /**
  * @author: dingyi
@@ -27,11 +24,11 @@ import jdk.jfr.Enabled
  **/
 
 @Composable
-fun ColumnScope.DropdownSubMenu(
+fun DropdownSubMenu(
     text: String,
     enabled: Boolean,
     parentSize: Size,
-    context: @Composable ColumnScope.(currentSize: Size) -> Unit = {}
+    context: @Composable (ColumnScope.(currentSize: Size) -> Unit) = {}
 ) {
 
     var isExpanded by remember { mutableStateOf(false) }
@@ -41,7 +38,6 @@ fun ColumnScope.DropdownSubMenu(
         text = {
             Box(
                 modifier = Modifier
-
                     .fillMaxSize()
                     .onGloballyPositioned { coordinates ->
                         size = coordinates.size.toSize()

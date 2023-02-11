@@ -4,26 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ef3eb604-7162-4cdd-b611-e3e802037d9f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/settings.gradle.kts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/jvmMain/kotlin/io/github/dingyi222666/androlua/Application.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/jvmMain/kotlin/io/github/dingyi222666/androlua/Main.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/jvmMain/kotlin/io/github/dingyi222666/androlua/ui/common/AppResources.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/jvmMain/kotlin/io/github/dingyi222666/androlua/ui/common/WindowState.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/jvmMain/kotlin/io/github/dingyi222666/androlua/ui/main/MainState.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/jvmMain/kotlin/io/github/dingyi222666/androlua/ui/main/MainWindow.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/jvmMain/resources/images/minus.xml" afterDir="false" />
+    <list default="true" id="ef3eb604-7162-4cdd-b611-e3e802037d9f" name="Changes" comment="feat: 初次提交">
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/io/github/dingyi222666/androlua/ui/common/DropdownSubMenu.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmMain/kotlin/io/github/dingyi222666/androlua/ui/common/DropdownSubMenu.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/io/github/dingyi222666/androlua/ui/main/MainState.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmMain/kotlin/io/github/dingyi222666/androlua/ui/main/MainState.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/io/github/dingyi222666/androlua/ui/main/MainWindow.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmMain/kotlin/io/github/dingyi222666/androlua/ui/main/MainWindow.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/io/github/dingyi222666/androlua/ui/theme/Color.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/io/github/dingyi222666/androlua/ui/theme/Theme.kt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,6 +61,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Kotlin File" />
         <option value="Kotlin Class" />
       </list>
     </option>
@@ -90,8 +77,8 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "G:/IdeaProjects/amdrolua-desktop/src/jvmMain/resources/images",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+    "last_opened_file_path": "G:/IdeaProjects/compose-jb-examples-codeviewer",
+    "settings.editor.selected.configurable": "preferences.keymap"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -160,6 +147,22 @@
       <option name="presentableId" value="Default" />
       <updated>1676118055223</updated>
     </task>
+    <task id="LOCAL-00001" summary="feat: 初次提交">
+      <created>1676147939839</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1676147939839</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="feat: 初次提交" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: 初次提交" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

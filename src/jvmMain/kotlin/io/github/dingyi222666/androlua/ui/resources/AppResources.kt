@@ -1,4 +1,4 @@
-package io.github.dingyi222666.androlua.ui.common
+package io.github.dingyi222666.androlua.ui.resources
 
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
@@ -10,8 +10,6 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.RenderVectorGroup
 import androidx.compose.ui.graphics.vector.VectorPainter
 import androidx.compose.ui.graphics.vector.rememberVectorPainter
-import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.unit.dp
 
 /**
  * @author: dingyi

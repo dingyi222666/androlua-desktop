@@ -1,4 +1,4 @@
-package io.github.dingyi222666.androlua.ui.theme
+package io.github.dingyi222666.androlua.ui.resources.theme
 import androidx.compose.ui.graphics.Color
 
 val md_theme_light_primary = Color(0xFF416916)

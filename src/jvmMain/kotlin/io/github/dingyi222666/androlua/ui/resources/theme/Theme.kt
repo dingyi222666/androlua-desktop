@@ -1,7 +1,6 @@
-package io.github.dingyi222666.androlua.ui.theme
+package io.github.dingyi222666.androlua.ui.resources.theme
 
 import androidx.compose.foundation.isSystemInDarkTheme
-import androidx.compose.material.BackdropValue
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.lightColorScheme
 import androidx.compose.material3.darkColorScheme
@@ -11,7 +10,6 @@ import com.mayakapps.compose.windowstyler.WindowBackdrop
 import com.mayakapps.compose.windowstyler.WindowCornerPreference
 import com.mayakapps.compose.windowstyler.WindowFrameStyle
 import com.mayakapps.compose.windowstyler.WindowStyle
-import io.github.dingyi222666.androlua.ui.theme.*
 
 
 private val LightColors = lightColorScheme(
@@ -100,9 +98,6 @@ fun WindowScope.AppTheme(
         colorScheme = colors,
         content = content
     )
-}
-
-fun WindowScope.windowStyle() {
 
 
 }

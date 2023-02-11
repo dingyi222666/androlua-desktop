@@ -4,7 +4,7 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.window.*
 
 import io.github.dingyi222666.androlua.ui.common.WindowState
-import io.github.dingyi222666.androlua.ui.common.LocalAppResources
+import io.github.dingyi222666.androlua.ui.resources.LocalAppResources
 import io.github.dingyi222666.androlua.ui.main.MainState
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
