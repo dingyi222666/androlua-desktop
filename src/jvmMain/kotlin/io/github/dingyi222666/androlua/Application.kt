@@ -7,7 +7,9 @@ import io.github.dingyi222666.androlua.ui.common.WindowState
 import io.github.dingyi222666.androlua.ui.resources.LocalAppResources
 import io.github.dingyi222666.androlua.ui.main.MainState
 import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
+import java.util.prefs.Preferences
 import kotlin.system.exitProcess
 
 /**
@@ -22,6 +24,8 @@ class ApplicationState {
 
     private val _windows = mutableStateListOf<WindowState>()
     val windows: List<WindowState> get() = _windows
+
+    internal val applicationPreferences = Preferences.userNodeForPackage(ApplicationState::class.java)
 
     fun addWindow(windowState: WindowState) {
         _windows.add(windowState)
@@ -54,6 +58,8 @@ class ApplicationState {
     }
 }
 
+val LocalApplicationState = staticCompositionLocalOf<ApplicationState> { error("No ApplicationState found") }
+
 @Composable
 fun rememberApplicationState() = remember {
     ApplicationState().apply {
@@ -70,9 +76,17 @@ fun ApplicationScope.Application(state: ApplicationState) {
 
     for (window in state.windows) {
         key(window) {
-            window.newWindow()
+            CompositionLocalProvider(LocalApplicationState provides state) {
+                window.newWindow()
+            }
         }
     }
+}
+
+fun <T : Any> ApplicationState.preferences(block: (Preferences) -> T): T {
+    val result = block(applicationPreferences)
+    applicationPreferences.flush()
+    return result
 }
 
 @Composable

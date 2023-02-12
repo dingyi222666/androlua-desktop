@@ -31,6 +31,7 @@ kotlin {
                 implementation(compose.foundation)
                 implementation(compose.materialIconsExtended)
 
+                implementation("org.json:json:${extra["json.version"]}")
                 implementation("net.java.dev.jna:jna:${extra["jna.version"]}")
                 implementation("net.java.dev.jna:jna-platform:${extra["jna.version"]}")
                 implementation ("cafe.adriel.bonsai:bonsai-core:${extra["bonsai.version"]}")

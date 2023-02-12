@@ -1,6 +1,7 @@
 package io.github.dingyi222666.androlua.core.project
 
 import java.io.File
+import java.util.prefs.Preferences
 
 /**
  * @author: dingyi
@@ -10,6 +11,7 @@ import java.io.File
 class Project(
     val rootDir: File
 ) {
+
     fun initProjectData() {
 
     }
@@ -21,6 +23,8 @@ class Project(
         fun isProjectDir(dir: File): Boolean {
             return dir.exists() && dir.isDirectory && dir.listFiles()?.any { it.name == "init.lua" } == true
         }
+
+
     }
 
 }

@@ -18,7 +18,8 @@ import androidx.compose.ui.graphics.vector.rememberVectorPainter
  **/
 
 val LocalAppResources = staticCompositionLocalOf<AppResources> {
-    error("LocalNotepadResources isn't provided")
+    error("LocalApp" +
+            "Resources isn't provided")
 }
 
 @Composable
@@ -28,11 +29,8 @@ fun rememberAppResources(): AppResources {
 }
 
 class AppResources(
-
     val trayIcon: VectorPainter
-) {
-
-}
+)
 
 @Composable
 fun rememberVectorPainter(image: ImageVector, tintColor: Color) =
