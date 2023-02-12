@@ -55,10 +55,14 @@ compose.desktop {
     application {
         mainClass = "io.github.dingyi222666.androlua.MainKt"
         nativeDistributions {
+            modules("java.instrument", "jdk.unsupported")
             targetFormats(TargetFormat.Dmg, TargetFormat.Msi, TargetFormat.Deb, TargetFormat.Exe)
             packageName = "Androlua-Desktop"
             packageVersion = "1.0.0"
             description = "AndroLua Desktop"
+        }
+        buildTypes.release.proguard {
+            //obfuscate.set(true)
         }
     }
 }

@@ -5,11 +5,16 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.material3.DropdownMenu
 import androidx.compose.material3.DropdownMenuItem
 import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
+import androidx.compose.runtime.*
+import androidx.compose.runtime.internal.composableLambda
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.unit.dp
-import io.github.dingyi222666.androlua.ui.view.DropdownSubMenu
+import io.github.dingyi222666.androlua.ui.common.clearState
+import io.github.dingyi222666.androlua.ui.component.DropdownSubMenu
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.launch
 
 /**
  * @author: dingyi
@@ -18,46 +23,32 @@ import io.github.dingyi222666.androlua.ui.view.DropdownSubMenu
  **/
 
 @Composable
-fun MainTitleBarPopupMenu(state: MainState, expanded: Boolean, onDismissRequest: () -> Unit = {}) {
-    val menuItems = mapOf(
-        "文件" to listOf(
-            "新建",
-            "打开（项目)",
-            "保存",
-            "另存为",
-            "关闭",
-            "退出",
-        ),
-        "编辑" to listOf(
-            "撤销",
-            "重做",
-            "剪切",
-            "复制",
-            "粘贴",
-            "删除",
-            "全选",
-        ),
-        "运行" to listOf(
-            "运行",
-            "调试",
-            "停止",
-        ),
-        "帮助" to listOf(
-            "帮助",
-            "关于",
-        ),
-    )
+fun MainTitleBarPopupMenu(state: MainState, expanded: Boolean, onDismissRequest: () -> Unit) {
 
-    val menuClicks = { value: String ->
 
+    var isOpenFileChooserDialog by remember {  mutableStateOf(false) }
+
+    val menuClicks = { value: String, menuState: MutableState<Boolean> ->
+        when (value) {
+            "打开（项目)" -> {
+                isOpenFileChooserDialog = true
+            }
+        }
+        menuState.value = false
+        onDismissRequest()
     }
+
+    MainFileChooser(isOpenFileChooserDialog) {
+        isOpenFileChooserDialog = false
+    }
+
 
     DropdownMenu(
         expanded = expanded,
         onDismissRequest = onDismissRequest
     ) {
         for ((key, value) in menuItems) {
-            DropdownSubMenu(key, expanded, Size(-260f, -40f)) {
+            DropdownSubMenu(key, expanded, Size(-260f, -40f)) { _, parentMenuExpand ->
                 for (item in value) {
                     DropdownMenuItem(
                         text = {
@@ -67,7 +58,7 @@ fun MainTitleBarPopupMenu(state: MainState, expanded: Boolean, onDismissRequest:
                             .width(210.dp)
                             .height(40.dp),
                         onClick = {
-                            menuClicks(item)
+                            menuClicks(item, parentMenuExpand)
                         },
                         enabled = true
                     )
@@ -77,4 +68,34 @@ fun MainTitleBarPopupMenu(state: MainState, expanded: Boolean, onDismissRequest:
         }
     }
 
+
 }
+
+val menuItems = mapOf(
+    "文件" to listOf(
+        "新建",
+        "打开（项目)",
+        "保存",
+        "另存为",
+        "关闭",
+        "退出",
+    ),
+    "编辑" to listOf(
+        "撤销",
+        "重做",
+        "剪切",
+        "复制",
+        "粘贴",
+        "删除",
+        "全选",
+    ),
+    "运行" to listOf(
+        "运行",
+        "调试",
+        "停止",
+    ),
+    "帮助" to listOf(
+        "帮助",
+        "关于",
+    ),
+)

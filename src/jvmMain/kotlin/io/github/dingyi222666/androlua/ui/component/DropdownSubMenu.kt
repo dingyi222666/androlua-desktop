@@ -1,4 +1,4 @@
-package io.github.dingyi222666.androlua.ui.view
+package io.github.dingyi222666.androlua.ui.component
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
@@ -28,10 +28,10 @@ fun DropdownSubMenu(
     text: String,
     enabled: Boolean,
     parentSize: Size,
-    context: @Composable (ColumnScope.(currentSize: Size) -> Unit) = {}
+    context: @Composable (ColumnScope.(currentSize: Size, parentMenuExpand: MutableState<Boolean>) -> Unit) = { _, _ -> }
 ) {
 
-    var isExpanded by remember { mutableStateOf(false) }
+    val isExpanded = mutableStateOf(false)
     var size by remember { mutableStateOf(Size.Zero) }
 
     DropdownMenuItem(
@@ -49,7 +49,7 @@ fun DropdownSubMenu(
                     modifier = Modifier
                         .align(Alignment.CenterStart)
                         .clickable {
-                            isExpanded = true
+                            isExpanded.value = true
                         }
                 )
 
@@ -58,10 +58,10 @@ fun DropdownSubMenu(
                         x = parentSize.width.dp,
                         y = parentSize.height.dp
                     ),
-                    expanded = isExpanded,
-                    onDismissRequest = { isExpanded = false }
+                    expanded = isExpanded.value,
+                    onDismissRequest = { isExpanded.value = false }
                 ) {
-                    context(Size(size.width - parentSize.width, -parentSize.height))
+                    context(Size(size.width - parentSize.width, -parentSize.height), isExpanded)
                 }
             }
         },
@@ -75,7 +75,7 @@ fun DropdownSubMenu(
             )
         },
         onClick = {
-            isExpanded = true
+            isExpanded.value = true
         },
         enabled = enabled
     )

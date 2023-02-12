@@ -19,10 +19,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.min
-import androidx.compose.ui.window.WindowScope
 import io.github.dingyi222666.androlua.ui.common.LocalWindowScope
-import io.github.dingyi222666.androlua.ui.view.SplitterState
-import io.github.dingyi222666.androlua.ui.view.VerticalSplittable
+import io.github.dingyi222666.androlua.ui.component.SplitterState
+import io.github.dingyi222666.androlua.ui.component.VerticalSplittable
 
 /**
  * @author: dingyi

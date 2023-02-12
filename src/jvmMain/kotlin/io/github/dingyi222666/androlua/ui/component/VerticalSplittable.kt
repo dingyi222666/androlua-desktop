@@ -1,4 +1,4 @@
-package io.github.dingyi222666.androlua.ui.view
+package io.github.dingyi222666.androlua.ui.component
 
 /**
  * @author: dingyi

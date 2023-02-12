@@ -1,4 +1,4 @@
-package io.github.dingyi222666.androlua.ui.view
+package io.github.dingyi222666.androlua.ui.component
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.window.WindowDraggableArea
@@ -17,7 +17,6 @@ import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.WindowPlacement
-import androidx.compose.ui.window.WindowScope
 import io.github.dingyi222666.androlua.ui.common.LocalWindowScope
 import io.github.dingyi222666.androlua.ui.common.WindowState
 import io.github.dingyi222666.androlua.ui.resources.rememberVectorPainter

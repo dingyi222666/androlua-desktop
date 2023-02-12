@@ -23,9 +23,6 @@ fun MainWindow(state: MainState) {
         modifier = Modifier.background(MaterialTheme.colorScheme.background)
     ) {
         MainTitleBar(state)
-        Text(
-            text = File("").absolutePath
-        )
         MainPanel(
             state = state,
             leftPanel = {

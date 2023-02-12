@@ -9,8 +9,7 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.window.WindowScope
-import io.github.dingyi222666.androlua.ui.view.TitleBar
+import io.github.dingyi222666.androlua.ui.component.TitleBar
 
 /**
  * @author: dingyi
@@ -42,7 +41,6 @@ fun MainTitleBar(state: MainState) {
                 MainTitleBarPopupMenu(state, showMainPopupMenu) {
                     showMainPopupMenu = false
                 }
-
             }
         },
         trailing = {
