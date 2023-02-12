@@ -18,8 +18,3 @@ import java.awt.Cursor
 fun Modifier.cursorForHorizontalResize(): Modifier =
     this.pointerHoverIcon(PointerIcon(Cursor(Cursor.E_RESIZE_CURSOR)))
 
-fun clearState(vararg states: MutableState<Boolean>) {
-    states.forEach {
-        it.value = false
-    }
-}

@@ -10,6 +10,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import io.github.dingyi222666.androlua.ui.component.TitleBar
+import io.github.dingyi222666.androlua.ui.component.TitleBarIcon
 
 /**
  * @author: dingyi
@@ -25,37 +26,27 @@ fun MainTitleBar(state: MainState) {
     TitleBar(
         state = state,
         leading = {
-            IconButton(
-                onClick = {
-                    showMainPopupMenu = true
-                },
+            TitleBarIcon(
+                painter = painterResource("images/menu.xml"),
+                contentDescription = "Menu",
                 modifier = Modifier
                     .padding(start = 24.dp, end = 24.dp)
                     .height(24.dp)
-                    .width(24.dp)
+                    .width(24.dp),
+                onClick = {
+                    showMainPopupMenu = true
+                },
             ) {
-                Icon(
-                    painter = painterResource("images/menu.xml"),
-                    contentDescription = "Menu",
-                )
                 MainTitleBarPopupMenu(state, showMainPopupMenu) {
                     showMainPopupMenu = false
                 }
             }
         },
         trailing = {
-            IconButton(
-                onClick = {},
-                modifier = Modifier
-                    .padding(end = 24.dp)
-                    .height(24.dp)
-                    .width(24.dp)
-            ) {
-                Icon(
-                    painter = painterResource("images/play.xml"),
-                    contentDescription = "Menu",
-                )
-            }
+            TitleBarIcon(
+                painter = painterResource("images/play.xml"),
+                contentDescription = "Run",
+            )
         }
     )
 

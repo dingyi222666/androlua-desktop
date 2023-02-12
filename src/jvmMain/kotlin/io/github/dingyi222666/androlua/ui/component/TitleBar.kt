@@ -12,6 +12,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.rotate
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.layout.onGloballyPositioned
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.res.painterResource
@@ -140,21 +141,26 @@ fun TitleBar(
             },
             trailing = {
                 trailing?.invoke(this)
-                IconButton(
+
+                TitleBarIcon(
                     onClick = {
                         state.window.isMinimized = true
                     },
-                    modifier = Modifier
-                        .padding(end = 24.dp)
-                        .height(24.dp)
-                        .width(24.dp)
-                ) {
-                    Icon(
-                        painter = painterResource("images/minus.xml"),
-                        contentDescription = "Minimized Window",
-                    )
-                }
-                IconButton(
+                    painter = painterResource("images/minus.xml"),
+                    contentDescription = "Minimized Window",
+                )
+
+                TitleBarIcon(
+                    painter = if (state.window.placement == WindowPlacement.Maximized) {
+                        painterResource("images/circle_multiple_outline.xml")
+                    } else {
+                        painterResource("images/circle_outline.xml")
+                    },
+                    contentDescription = if (state.window.placement == WindowPlacement.Maximized) {
+                        "Restore Window"
+                    } else {
+                        "Maximize Window"
+                    },
                     onClick = {
                         if (state.window.placement == WindowPlacement.Maximized) {
                             state.window.placement = WindowPlacement.Floating
@@ -162,47 +168,41 @@ fun TitleBar(
                             state.window.placement = WindowPlacement.Maximized
                         }
                     },
-                    modifier = Modifier
-                        .padding(end = 24.dp)
-                        .height(24.dp)
-                        .width(24.dp)
-                ) {
-                    if (state.window.placement == WindowPlacement.Maximized) {
-                        Icon(
-                            painter = painterResource("images/circle_multiple_outline.xml"),
-                            contentDescription = "Restore Window",
-                            modifier = Modifier.rotate(180f)
-                                .height(20.dp)
-                                .width(20.dp)
-                        )
-                    } else {
-                        Icon(
-                            painter = painterResource("images/circle_outline.xml"),
-                            contentDescription = "Maximize Window",
-                            modifier = Modifier.height(20.dp)
-                                .width(20.dp)
-                        )
-                    }
+                )
 
-                }
-                IconButton(
-                    onClick = state::callExit,
-                    modifier = Modifier
-                        .padding(end = 24.dp)
-                        .height(24.dp)
-                        .width(24.dp)
-
-                ) {
-                    Icon(
-                        painter = rememberVectorPainter(
-                            Icons.Default.Close, MaterialTheme.colorScheme.onSurface
-                        ),
-                        contentDescription = "Close Window",
-                    )
-                }
+                TitleBarIcon(
+                    painter = rememberVectorPainter(
+                        Icons.Default.Close, MaterialTheme.colorScheme.onSurface
+                    ),
+                    contentDescription = "Close Window",
+                    onClick = state::callExit
+                )
             }
         )
 
     }
 }
 
+@Composable
+fun TitleBarIcon(
+    painter: Painter,
+    modifier: Modifier = Modifier
+        .padding(end = 24.dp)
+        .height(24.dp)
+        .width(24.dp),
+    contentDescription: String = "empty",
+    onClick: () -> Unit = {},
+    content: @Composable () -> Unit = {}
+) {
+    IconButton(
+        onClick = onClick,
+        modifier = modifier,
+    ) {
+        Icon(
+            painter = painter,
+            contentDescription = contentDescription,
+        )
+        content()
+    }
+
+}

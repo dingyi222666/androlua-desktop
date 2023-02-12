@@ -43,7 +43,6 @@ fun DropdownSubMenu(
                         size = coordinates.size.toSize()
                     }
             ) {
-
                 Text(
                     text = text,
                     modifier = Modifier

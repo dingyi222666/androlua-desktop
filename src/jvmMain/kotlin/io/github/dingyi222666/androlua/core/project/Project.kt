@@ -10,9 +10,13 @@ import java.io.File
 class Project(
     val rootDir: File
 ) {
+    fun initProjectData() {
 
+    }
 
     companion object {
+
+        val EMPTY = Project(File(""))
 
         fun isProjectDir(dir: File): Boolean {
             return dir.exists() && dir.isDirectory && dir.listFiles()?.any { it.name == "init.lua" } == true
