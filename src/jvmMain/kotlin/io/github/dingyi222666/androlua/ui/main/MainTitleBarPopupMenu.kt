@@ -33,7 +33,7 @@ fun MainTitleBarPopupMenu(state: MainState, expanded: Boolean, onDismissRequest:
         onDismissRequest()
     }
 
-    MainFileChooser(isOpenFileChooserDialog) {
+    MainFileChooser(state,isOpenFileChooserDialog) {
         isOpenFileChooserDialog = false
     }
 

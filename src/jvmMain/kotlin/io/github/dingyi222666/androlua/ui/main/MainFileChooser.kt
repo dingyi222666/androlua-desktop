@@ -1,16 +1,16 @@
 package io.github.dingyi222666.androlua.ui.main
 
-import androidx.compose.runtime.Composable
-import androidx.compose.runtime.MutableState
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import io.github.dingyi222666.androlua.LocalApplicationState
+import androidx.compose.material.AlertDialog
+import androidx.compose.material.ExperimentalMaterialApi
+import androidx.compose.material3.Button
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Text
+import androidx.compose.runtime.*
 import io.github.dingyi222666.androlua.ui.common.LocalWindowScope
 import io.github.dingyi222666.androlua.ui.component.FileChooserDialog
 import io.github.dingyi222666.androlua.ui.component.FileChooserDialogMode
-import kotlinx.coroutines.flow.MutableStateFlow
-import java.io.File
-import javax.swing.filechooser.FileNameExtensionFilter
+import io.github.dingyi222666.androlua.ui.component.Material3AlertDialog
+import kotlinx.coroutines.launch
 
 /**
  * @author: dingyi
@@ -19,15 +19,55 @@ import javax.swing.filechooser.FileNameExtensionFilter
  **/
 
 @Composable
-fun MainFileChooser(openState: Boolean, onDismissRequest: () -> Unit) = with(LocalWindowScope.current) {
+fun MainFileChooser(state: MainState, openState: Boolean, onDismissRequest: () -> Unit) {
+
+    var isShowErrorProjectState by remember { mutableStateOf(false) }
+
+    val scope = rememberCoroutineScope()
+
     if (openState) {
-        FileChooserDialog(
-            mode = FileChooserDialogMode.Mode.LOAD_DIR,
-            id = 0x12,
-            title = "Your dialog title"
-        ) { files ->
-            println(openState)
-            onDismissRequest()
+        with(LocalWindowScope.current) {
+            FileChooserDialog(
+                mode = FileChooserDialogMode.Mode.LOAD_DIR, id = 0x12, title = "选择项目地址"
+            ) { files ->
+                files.getOrNull(0)?.let {
+                    scope.launch {
+                        runCatching {
+                            state.openProject(it)
+                        }.onFailure {
+                            isShowErrorProjectState = true
+                        }
+                    }
+                }
+
+                onDismissRequest()
+            }
         }
+    }
+
+    if (isShowErrorProjectState) {
+        OpenErrorProjectDialog(isShowErrorProjectState) {
+            isShowErrorProjectState = false
+        }
+    }
+
+}
+
+
+@OptIn(ExperimentalMaterialApi::class)
+@Composable
+fun OpenErrorProjectDialog(openState: Boolean, onDismissRequest: () -> Unit) {
+    if (openState) {
+        Material3AlertDialog(onDismissRequest = onDismissRequest,
+            shape = MaterialTheme.shapes.medium,
+            title = { Text("打开项目失败") },
+            text = { Text("你可能打开的不是一个AndroLua+项目呢") },
+            confirmButton = {
+                Button(onClick = {
+                    onDismissRequest()
+                }) {
+                    Text("确定")
+                }
+            })
     }
 }

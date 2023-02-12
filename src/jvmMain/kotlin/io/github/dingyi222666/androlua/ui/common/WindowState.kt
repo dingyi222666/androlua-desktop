@@ -39,8 +39,6 @@ abstract class WindowState(
     @Composable
     open fun newWindow() {
         scope = rememberCoroutineScope()
-
-
     }
 
 }

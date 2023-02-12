@@ -8,7 +8,7 @@ import java.io.File
  * @date: 2023/2/12
  * @description:
  **/
-class MainRepository {
+object MainRepository {
 
 
     fun openProject(file: File):Project {

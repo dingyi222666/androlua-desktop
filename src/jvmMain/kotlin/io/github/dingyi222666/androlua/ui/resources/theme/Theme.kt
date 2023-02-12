@@ -10,6 +10,7 @@ import com.mayakapps.compose.windowstyler.WindowBackdrop
 import com.mayakapps.compose.windowstyler.WindowCornerPreference
 import com.mayakapps.compose.windowstyler.WindowFrameStyle
 import com.mayakapps.compose.windowstyler.WindowStyle
+import io.github.dingyi222666.androlua.ui.resources.LocalAppResources
 
 
 private val LightColors = lightColorScheme(
@@ -96,7 +97,8 @@ fun WindowScope.AppTheme(
 
     MaterialTheme(
         colorScheme = colors,
-        content = content
+        content = content,
+        typography = LocalAppResources.current.appFont
     )
 
 

@@ -3,14 +3,13 @@ package io.github.dingyi222666.androlua.ui.main
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
-import androidx.compose.material3.Icon
-import androidx.compose.material3.IconButton
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import io.github.dingyi222666.androlua.ui.component.TitleBar
 import io.github.dingyi222666.androlua.ui.component.TitleBarIcon
+import io.github.dingyi222666.androlua.ui.resources.LocalAppResources
 
 /**
  * @author: dingyi
@@ -25,6 +24,7 @@ fun MainTitleBar(state: MainState) {
 
     TitleBar(
         state = state,
+        titleText = LocalAppResources.current.appTitle,
         leading = {
             TitleBarIcon(
                 painter = painterResource("images/menu.xml"),

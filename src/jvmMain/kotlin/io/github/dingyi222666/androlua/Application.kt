@@ -2,12 +2,11 @@ package io.github.dingyi222666.androlua
 
 import androidx.compose.runtime.*
 import androidx.compose.ui.window.*
+import io.github.dingyi222666.androlua.ui.resources.LocalAppResources
 
 import io.github.dingyi222666.androlua.ui.common.WindowState
-import io.github.dingyi222666.androlua.ui.resources.LocalAppResources
 import io.github.dingyi222666.androlua.ui.main.MainState
 import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import java.util.prefs.Preferences
 import kotlin.system.exitProcess
@@ -101,7 +100,7 @@ private fun MenuScope.ApplicationMenu(state: ApplicationState, scope: CoroutineS
 @Composable
 private fun ApplicationScope.ApplicationTray(state: ApplicationState, scope: CoroutineScope) {
     Tray(
-        LocalAppResources.current.trayIcon,
+        LocalAppResources.current.appIcon,
         state = state.tray,
         tooltip = "AndroLua+ Desktop",
         menu = { ApplicationMenu(state, scope) }
