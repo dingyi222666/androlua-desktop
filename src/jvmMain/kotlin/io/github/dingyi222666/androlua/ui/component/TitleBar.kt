@@ -12,6 +12,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.painter.Painter
+import androidx.compose.ui.graphics.vector.rememberVectorPainter
 import androidx.compose.ui.layout.onGloballyPositioned
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.res.painterResource
@@ -32,7 +33,7 @@ import io.github.dingyi222666.androlua.ui.resources.rememberVectorPainter
 @Composable
 fun CenterTopAppBar(
     modifier: Modifier = Modifier,
-    backgroundColor: Color = MaterialTheme.colorScheme.surface,
+    backgroundColor: Color = MaterialTheme.colorScheme.surfaceVariant,
     contentColor: Color = contentColorFor(backgroundColor),
     contentPadding: PaddingValues = TopAppBarDefaults.windowInsets.asPaddingValues(),
     leading: @Composable (RowScope.() -> Unit)? = null,
@@ -135,7 +136,7 @@ fun TitleBar(
                 Text(
                     text = titleText,
                     modifier = Modifier
-                        .padding(start = 18.dp, end = 24.dp)
+                        .padding(start = 16.dp, end = 16.dp)
                 )
             },
             trailing = {
@@ -171,7 +172,7 @@ fun TitleBar(
 
                 TitleBarIcon(
                     painter = rememberVectorPainter(
-                        Icons.Default.Close, MaterialTheme.colorScheme.onSurface
+                        Icons.Default.Close
                     ),
                     contentDescription = "Close Window",
                     onClick = state::callExit
@@ -186,7 +187,7 @@ fun TitleBar(
 fun TitleBarIcon(
     painter: Painter,
     modifier: Modifier = Modifier
-        .padding(end = 24.dp)
+        .padding(end = 16.dp)
         .height(24.dp)
         .width(24.dp),
     contentDescription: String = "empty",
@@ -199,6 +200,7 @@ fun TitleBarIcon(
     ) {
         Icon(
             painter = painter,
+            tint = MaterialTheme.colorScheme.onSurfaceVariant,
             contentDescription = contentDescription,
         )
         content()

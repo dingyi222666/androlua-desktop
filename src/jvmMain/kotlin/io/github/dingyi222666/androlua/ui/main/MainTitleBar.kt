@@ -36,7 +36,7 @@ fun MainTitleBar(state: MainState) {
                 painter = LocalAppResources.current.appIcon,
                 contentDescription = "Icon",
                 modifier = Modifier
-                    .padding(start = 24.dp, end = 24.dp)
+                    .padding(start = 16.dp, end = 16.dp)
                     .height(24.dp)
                     .width(24.dp),
                 contentScale = ContentScale.Fit
@@ -46,7 +46,6 @@ fun MainTitleBar(state: MainState) {
                 painter = painterResource("images/menu.xml"),
                 contentDescription = "Menu",
                 modifier = Modifier
-                    .padding(end = 24.dp)
                     .height(24.dp)
                     .width(24.dp),
                 onClick = {

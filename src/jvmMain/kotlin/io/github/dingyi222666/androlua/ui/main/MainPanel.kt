@@ -60,7 +60,8 @@ fun MainPanel(
     ) {
         ResizablePanel(
             Modifier.width(animatedSize)
-                .fillMaxHeight(), panelState
+                .fillMaxHeight()
+                .background(MaterialTheme.colorScheme.surfaceVariant), panelState
         ) {
             leftPanel()
         }
