@@ -3,11 +3,9 @@ package io.github.dingyi222666.androlua.ui.main
 import androidx.compose.runtime.*
 import androidx.compose.ui.window.Window
 import io.github.dingyi222666.androlua.ApplicationState
+import io.github.dingyi222666.androlua.ui.common.LocalWindowScope
 import io.github.dingyi222666.androlua.ui.common.WindowState
 import io.github.dingyi222666.androlua.ui.resources.theme.AppTheme
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.flow.*
-import kotlinx.coroutines.launch
 import java.awt.Dimension
 
 /**
@@ -29,7 +27,9 @@ class MainState(application: ApplicationState) : WindowState(application) {
             undecorated = true
         ) {
             AppTheme {
-                MainWindow(this@MainState)
+                CompositionLocalProvider(LocalWindowScope provides this) {
+                    MainWindow(this@MainState)
+                }
             }
             composeWindow = window
             window.minimumSize = Dimension(800, 600)

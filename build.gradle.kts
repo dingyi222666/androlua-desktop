@@ -27,10 +27,14 @@ kotlin {
             dependencies {
                 implementation(compose.desktop.currentOs)
                 implementation(compose.material3)
-                // https://mvnrepository.com/artifact/net.java.dev.jna/jna
+                implementation(compose.runtime)
+                implementation(compose.foundation)
+                implementation(compose.materialIconsExtended)
+
                 implementation("net.java.dev.jna:jna:${extra["jna.version"]}")
                 implementation("net.java.dev.jna:jna-platform:${extra["jna.version"]}")
-
+                implementation ("cafe.adriel.bonsai:bonsai-core:${extra["bonsai.version"]}")
+                implementation ("cafe.adriel.bonsai:bonsai-file-system:${extra["bonsai.version"]}")
                 implementation("com.mayakapps.compose:window-styler:${extra["window-styler.version"]}")
             }
         }
@@ -51,9 +55,10 @@ compose.desktop {
     application {
         mainClass = "io.github.dingyi222666.androlua.MainKt"
         nativeDistributions {
-            targetFormats(TargetFormat.Dmg, TargetFormat.Msi, TargetFormat.Deb)
-            packageName = "androlua"
+            targetFormats(TargetFormat.Dmg, TargetFormat.Msi, TargetFormat.Deb, TargetFormat.Exe)
+            packageName = "Androlua-Desktop"
             packageVersion = "1.0.0"
+            description = "AndroLua Desktop"
         }
     }
 }

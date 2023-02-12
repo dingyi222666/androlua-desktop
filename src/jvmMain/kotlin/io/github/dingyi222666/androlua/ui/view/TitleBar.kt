@@ -18,6 +18,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.WindowPlacement
 import androidx.compose.ui.window.WindowScope
+import io.github.dingyi222666.androlua.ui.common.LocalWindowScope
 import io.github.dingyi222666.androlua.ui.common.WindowState
 import io.github.dingyi222666.androlua.ui.resources.rememberVectorPainter
 
@@ -122,87 +123,87 @@ fun CenterTopAppBar(
 }
 
 @Composable
-fun WindowScope.TitleBar(
+fun TitleBar(
     state: WindowState,
     titleText: String = "AndroLua+ Desktop",
     leading: @Composable RowScope.() -> Unit = {},
     trailing: @Composable (RowScope.() -> Unit)? = {},
-) = WindowDraggableArea {
-
-
-    CenterTopAppBar(
-        leading = leading,
-        title = {
-            Text(
-                text = titleText,
-                modifier = Modifier
-                    .padding(start = 18.dp, end = 24.dp)
-            )
-        },
-        trailing = {
-            trailing?.invoke(this)
-            IconButton(
-                onClick = {
-                    state.window.isMinimized = true
-                },
-                modifier = Modifier
-                    .padding(end = 24.dp)
-                    .height(24.dp)
-                    .width(24.dp)
-            ) {
-                Icon(
-                    painter = painterResource("images/minus.xml"),
-                    contentDescription = "Minimized Window",
+) = with(LocalWindowScope.current) {
+    WindowDraggableArea {
+        CenterTopAppBar(
+            leading = leading,
+            title = {
+                Text(
+                    text = titleText,
+                    modifier = Modifier
+                        .padding(start = 18.dp, end = 24.dp)
                 )
-            }
-            IconButton(
-                onClick = {
-                    if (state.window.placement == WindowPlacement.Maximized) {
-                        state.window.placement = WindowPlacement.Floating
-                    } else {
-                        state.window.placement = WindowPlacement.Maximized
-                    }
-                },
-                modifier = Modifier
-                    .padding(end = 24.dp)
-                    .height(24.dp)
-                    .width(24.dp)
-            ) {
-                if (state.window.placement == WindowPlacement.Maximized) {
+            },
+            trailing = {
+                trailing?.invoke(this)
+                IconButton(
+                    onClick = {
+                        state.window.isMinimized = true
+                    },
+                    modifier = Modifier
+                        .padding(end = 24.dp)
+                        .height(24.dp)
+                        .width(24.dp)
+                ) {
                     Icon(
-                        painter = painterResource("images/circle_multiple_outline.xml"),
-                        contentDescription = "Restore Window",
-                        modifier = Modifier.rotate(180f)
-                            .height(20.dp)
-                            .width(20.dp)
-                    )
-                } else {
-                    Icon(
-                        painter = painterResource("images/circle_outline.xml"),
-                        contentDescription = "Maximize Window",
-                        modifier = Modifier.height(20.dp)
-                            .width(20.dp)
+                        painter = painterResource("images/minus.xml"),
+                        contentDescription = "Minimized Window",
                     )
                 }
+                IconButton(
+                    onClick = {
+                        if (state.window.placement == WindowPlacement.Maximized) {
+                            state.window.placement = WindowPlacement.Floating
+                        } else {
+                            state.window.placement = WindowPlacement.Maximized
+                        }
+                    },
+                    modifier = Modifier
+                        .padding(end = 24.dp)
+                        .height(24.dp)
+                        .width(24.dp)
+                ) {
+                    if (state.window.placement == WindowPlacement.Maximized) {
+                        Icon(
+                            painter = painterResource("images/circle_multiple_outline.xml"),
+                            contentDescription = "Restore Window",
+                            modifier = Modifier.rotate(180f)
+                                .height(20.dp)
+                                .width(20.dp)
+                        )
+                    } else {
+                        Icon(
+                            painter = painterResource("images/circle_outline.xml"),
+                            contentDescription = "Maximize Window",
+                            modifier = Modifier.height(20.dp)
+                                .width(20.dp)
+                        )
+                    }
 
+                }
+                IconButton(
+                    onClick = state::callExit,
+                    modifier = Modifier
+                        .padding(end = 24.dp)
+                        .height(24.dp)
+                        .width(24.dp)
+
+                ) {
+                    Icon(
+                        painter = rememberVectorPainter(
+                            Icons.Default.Close, MaterialTheme.colorScheme.onSurface
+                        ),
+                        contentDescription = "Close Window",
+                    )
+                }
             }
-            IconButton(
-                onClick = state::callExit,
-                modifier = Modifier
-                    .padding(end = 24.dp)
-                    .height(24.dp)
-                    .width(24.dp)
+        )
 
-            ) {
-                Icon(
-                    painter = rememberVectorPainter(
-                        Icons.Default.Close, MaterialTheme.colorScheme.onSurface
-                    ),
-                    contentDescription = "Close Window",
-                )
-            }
-        }
-    )
-
+    }
 }
 

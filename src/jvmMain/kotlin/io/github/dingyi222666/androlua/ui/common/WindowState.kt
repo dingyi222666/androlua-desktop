@@ -2,7 +2,9 @@ package io.github.dingyi222666.androlua.ui.common
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.rememberCoroutineScope
+import androidx.compose.runtime.staticCompositionLocalOf
 import androidx.compose.ui.awt.ComposeWindow
+import androidx.compose.ui.window.WindowScope
 import androidx.compose.ui.window.WindowState
 import io.github.dingyi222666.androlua.ApplicationState
 import kotlinx.coroutines.CoroutineScope
@@ -41,4 +43,8 @@ abstract class WindowState(
 
     }
 
+}
+
+val LocalWindowScope = staticCompositionLocalOf<WindowScope> {
+    error("LocalWindowScope is not initialized")
 }

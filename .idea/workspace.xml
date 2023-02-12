@@ -5,11 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ef3eb604-7162-4cdd-b611-e3e802037d9f" name="Changes" comment="feat: 初次提交">
-      <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/io/github/dingyi222666/androlua/ui/common/DropdownSubMenu.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmMain/kotlin/io/github/dingyi222666/androlua/ui/common/DropdownSubMenu.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/jvmMain/kotlin/io/github/dingyi222666/androlua/core/project/Project.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/jvmMain/kotlin/io/github/dingyi222666/androlua/core/repository/MainRepository.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/jvmMain/kotlin/io/github/dingyi222666/androlua/core/util/fileUtils.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/jvmMain/kotlin/io/github/dingyi222666/androlua/ui/main/MainTitleBar.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/jvmMain/kotlin/io/github/dingyi222666/androlua/ui/main/MainTitleBarPopupMenu.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/io/github/dingyi222666/androlua/ui/common/WindowState.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmMain/kotlin/io/github/dingyi222666/androlua/ui/common/WindowState.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/io/github/dingyi222666/androlua/ui/editor/EditorEmptyView.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmMain/kotlin/io/github/dingyi222666/androlua/ui/editor/EditorEmptyView.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/io/github/dingyi222666/androlua/ui/main/MainPanel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmMain/kotlin/io/github/dingyi222666/androlua/ui/main/MainPanel.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/io/github/dingyi222666/androlua/ui/main/MainState.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmMain/kotlin/io/github/dingyi222666/androlua/ui/main/MainState.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/io/github/dingyi222666/androlua/ui/main/MainWindow.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmMain/kotlin/io/github/dingyi222666/androlua/ui/main/MainWindow.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/io/github/dingyi222666/androlua/ui/theme/Color.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/io/github/dingyi222666/androlua/ui/theme/Theme.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/io/github/dingyi222666/androlua/ui/view/TitleBar.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmMain/kotlin/io/github/dingyi222666/androlua/ui/view/TitleBar.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/io/github/dingyi222666/androlua/ui/view/VerticalSplittable.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmMain/kotlin/io/github/dingyi222666/androlua/ui/view/VerticalSplittable.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,6 +77,9 @@
       </list>
     </option>
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="ProjectId" id="2LanRRBsR2X3KVSPdnAKRPH13eR" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -78,7 +92,10 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
     "last_opened_file_path": "G:/IdeaProjects/compose-jb-examples-codeviewer",
-    "settings.editor.selected.configurable": "preferences.keymap"
+    "project.structure.last.edited": "Facets",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "project.kotlinCompiler"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -114,6 +131,8 @@
     <configuration name="MainKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="io.github.dingyi222666.androlua.MainKt" />
       <module name="androlua.jvmMain" />
+      <shortenClasspath name="NONE" />
+      <option name="VM_PARAMETERS" value=" --add-opens jdk.internal/jdk.internal.jvmstat=ALL-UNNAMED" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
