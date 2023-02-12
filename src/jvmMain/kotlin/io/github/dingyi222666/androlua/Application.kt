@@ -59,6 +59,8 @@ class ApplicationState {
 
 val LocalApplicationState = staticCompositionLocalOf<ApplicationState> { error("No ApplicationState found") }
 
+
+
 @Composable
 fun rememberApplicationState() = remember {
     ApplicationState().apply {

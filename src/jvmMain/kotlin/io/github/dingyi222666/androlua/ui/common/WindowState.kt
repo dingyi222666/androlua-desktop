@@ -16,7 +16,7 @@ import kotlinx.coroutines.launch
  * @description:
  **/
 abstract class WindowState(
-    val application: ApplicationState
+    protected val application: ApplicationState
 ) {
 
     abstract val window: WindowState
@@ -25,7 +25,7 @@ abstract class WindowState(
 
     lateinit var composeWindow: ComposeWindow
 
-    suspend fun exit(): Boolean {
+    open fun exit(): Boolean {
         application.exitWindow(this)
         return true
     }

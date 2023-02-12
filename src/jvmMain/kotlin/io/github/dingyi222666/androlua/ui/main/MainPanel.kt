@@ -50,8 +50,7 @@ fun MainPanel(
     val maxWidth = LocalWindowScope.current.window.width
 
     VerticalSplittable(
-        Modifier.fillMaxSize()
-            .background(MaterialTheme.colorScheme.surface),
+        Modifier.fillMaxSize(),
         panelState.splitter,
         onResize = {
             val expandedSize =

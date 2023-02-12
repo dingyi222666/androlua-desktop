@@ -23,25 +23,27 @@ fun MainFileChooser(state: MainState, openState: Boolean, onDismissRequest: () -
 
     var isShowErrorProjectState by remember { mutableStateOf(false) }
 
-    val scope = rememberCoroutineScope()
-
     if (openState) {
         with(LocalWindowScope.current) {
             FileChooserDialog(
                 mode = FileChooserDialogMode.Mode.LOAD_DIR, id = 0x12, title = "选择项目地址"
             ) { files ->
-                files.getOrNull(0)?.let {
-                    scope.launch {
-                        runCatching {
-                            state.openProject(it)
-                        }.onFailure {
-                            isShowErrorProjectState = true
-                        }
+
+                val selectDir = files.getOrNull(0) ?: return@FileChooserDialog
+
+                state.scope.launch {
+                    runCatching {
+                        state.openProject(selectDir)
+                    }.onFailure {
+                        isShowErrorProjectState = true
                     }
                 }
 
                 onDismissRequest()
+
             }
+
+
         }
     }
 
@@ -52,6 +54,7 @@ fun MainFileChooser(state: MainState, openState: Boolean, onDismissRequest: () -
     }
 
 }
+
 
 
 @OptIn(ExperimentalMaterialApi::class)
