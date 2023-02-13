@@ -25,9 +25,11 @@ fun CodeEditor(model: EditorModel, modifier: Modifier = Modifier) = key(model) {
         SwingPanel(
             background = Color.White,
             factory = {
-                val result = model.getEditorPane()
-                model.syncCaretPosition()
-                result
+                JPanel().apply {
+                    layout = BoxLayout(this, BoxLayout.Y_AXIS)
+                    add(model.getEditorPane())
+                    model.syncCaretPosition()
+                }
             }
         )
     }

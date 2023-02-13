@@ -12,5 +12,7 @@ pluginManagement {
     }
 }
 
-rootProject.name = "androlua"
+include(":app")
+rootProject.name = "androlua-desktop"
+
 

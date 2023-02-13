@@ -4,13 +4,59 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ef3eb604-7162-4cdd-b611-e3e802037d9f" name="Changes" comment="refactor: 重构ui代码">
-      <change afterPath="$PROJECT_DIR$/src/jvmMain/kotlin/io/github/dingyi222666/androlua/core/local/db/JsonDB.kt" afterDir="false" />
+    <list default="true" id="ef3eb604-7162-4cdd-b611-e3e802037d9f" name="Changes" comment="feat: 支持显示lua和aly高亮">
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/io/github/dingyi222666/androlua/core/project/Project.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmMain/kotlin/io/github/dingyi222666/androlua/core/project/Project.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/io/github/dingyi222666/androlua/ui/resources/AppResources.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmMain/kotlin/io/github/dingyi222666/androlua/ui/resources/AppResources.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/io/github/dingyi222666/androlua/Application.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/io/github/dingyi222666/androlua/Main.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/io/github/dingyi222666/androlua/core/local/db/DBAdapter.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/io/github/dingyi222666/androlua/core/local/db/JsonDB.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/io/github/dingyi222666/androlua/core/local/db/adapter/FileAdapter.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/io/github/dingyi222666/androlua/core/project/Project.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/io/github/dingyi222666/androlua/core/repository/MainRepository.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/io/github/dingyi222666/androlua/core/util/fileUtils.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/io/github/dingyi222666/androlua/ui/common/WindowState.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/io/github/dingyi222666/androlua/ui/common/composeUtil.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/io/github/dingyi222666/androlua/ui/component/DesktopTabRow.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/io/github/dingyi222666/androlua/ui/component/DropdownSubMenu.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/io/github/dingyi222666/androlua/ui/component/FileChooser.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/io/github/dingyi222666/androlua/ui/component/Material3AlertDialog.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/io/github/dingyi222666/androlua/ui/component/TitleBar.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/io/github/dingyi222666/androlua/ui/component/VerticalSplittable.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/io/github/dingyi222666/androlua/ui/editor/CodeEditor.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/io/github/dingyi222666/androlua/ui/editor/EditorEmptyView.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/io/github/dingyi222666/androlua/ui/editor/EditorModel.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/io/github/dingyi222666/androlua/ui/editor/EditorState.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/io/github/dingyi222666/androlua/ui/editor/EditorTabsView.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/io/github/dingyi222666/androlua/ui/editor/EditorsPanel.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/io/github/dingyi222666/androlua/ui/fileTree/FileTreeView.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/io/github/dingyi222666/androlua/ui/main/MainFileChooser.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/io/github/dingyi222666/androlua/ui/main/MainPanel.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/io/github/dingyi222666/androlua/ui/main/MainState.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/io/github/dingyi222666/androlua/ui/main/MainTitleBar.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/io/github/dingyi222666/androlua/ui/main/MainTitleBarPopupMenu.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/io/github/dingyi222666/androlua/ui/main/MainWindow.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/io/github/dingyi222666/androlua/ui/resources/AppResources.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/io/github/dingyi222666/androlua/ui/resources/font/AppFont.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/io/github/dingyi222666/androlua/ui/resources/theme/Color.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/io/github/dingyi222666/androlua/ui/resources/theme/Theme.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/fonts/HarmonyOS_Sans_SC_Black.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/fonts/HarmonyOS_Sans_SC_Bold.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/fonts/HarmonyOS_Sans_SC_Light.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/fonts/HarmonyOS_Sans_SC_Medium.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/fonts/HarmonyOS_Sans_SC_Regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/fonts/HarmonyOS_Sans_SC_Thin.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/fonts/LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/images/circle_multiple_outline.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/images/circle_outline.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/images/cog.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/images/menu.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/images/menu_right_outline.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/images/minus.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/images/play.xml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,6 +65,9 @@
   </component>
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+    <projectState path="$PROJECT_DIR$/app">
       <ProjectState />
     </projectState>
   </component>
@@ -30,41 +79,7 @@
         </task>
         <projects_view>
           <tree_state>
-            <expand>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="androlua" type="f1a62948:ProjectNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="androlua" type="f1a62948:ProjectNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="androlua" type="f1a62948:ProjectNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-                <item name="compose desktop" type="c8890929:TasksNode$1" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="androlua" type="f1a62948:ProjectNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-                <item name="help" type="c8890929:TasksNode$1" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="androlua" type="f1a62948:ProjectNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-                <item name="other" type="c8890929:TasksNode$1" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="androlua" type="f1a62948:ProjectNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-                <item name="verification" type="c8890929:TasksNode$1" />
-              </path>
-            </expand>
+            <expand />
             <select />
           </tree_state>
         </projects_view>
@@ -75,6 +90,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Kotlin File" />
+        <option value="Kotlin Interface" />
+        <option value="NewLua" />
         <option value="Kotlin Class" />
       </list>
     </option>
@@ -93,11 +110,12 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;corretto-17&quot;,
     &quot;last_opened_file_path&quot;: &quot;G:/IdeaProjects/compose-jb-examples-codeviewer&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Facets&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;
   }
 }</component>
   <component name="RecentsManager">
@@ -105,6 +123,8 @@
       <recent name="G:\IdeaProjects\amdrolua-desktop\src\jvmMain\resources\images" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="G:\IdeaProjects\amdrolua-desktop\src\jvmMain\kotlin\io\github\dingyi222666\androlua\ui\resources" />
+      <recent name="G:\IdeaProjects\amdrolua-desktop\src\jvmMain\resources\fonts" />
       <recent name="G:\IdeaProjects\amdrolua-desktop\src\jvmMain\kotlin\io\github\dingyi222666\androlua" />
     </key>
   </component>
@@ -242,7 +262,70 @@
       <option name="project" value="LOCAL" />
       <updated>1676203329023</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="feat: 添加简易json db实现">
+      <created>1676215342827</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1676215342827</updated>
+    </task>
+    <task id="LOCAL-00006" summary="feat: 添加新字体">
+      <created>1676226397573</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1676226397573</updated>
+    </task>
+    <task id="LOCAL-00007" summary="feat: 添加新字体，添加App图标">
+      <created>1676226789257</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1676226789257</updated>
+    </task>
+    <task id="LOCAL-00008" summary="feat: 添加项目打开失败时的事件">
+      <created>1676237525187</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1676237525187</updated>
+    </task>
+    <task id="LOCAL-00009" summary="feat: 文件树支持">
+      <created>1676243678228</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1676243678228</updated>
+    </task>
+    <task id="LOCAL-00010" summary="feat: 添加基础的编辑器结构">
+      <created>1676247995925</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1676247995925</updated>
+    </task>
+    <task id="LOCAL-00011" summary="feat: 添加编辑器控件">
+      <created>1676284865900</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1676284865900</updated>
+    </task>
+    <task id="LOCAL-00012" summary="feat: tab和滚动条联动">
+      <created>1676292149496</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1676292149496</updated>
+    </task>
+    <task id="LOCAL-00013" summary="feat: 支持显示lua和aly高亮">
+      <created>1676297821952</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1676297821952</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -257,11 +340,23 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/app" />
+    </ignored-roots>
     <MESSAGE value="feat: 初次提交" />
     <MESSAGE value="feat: 更新ui" />
     <MESSAGE value="feat: 添加文件选择器" />
     <MESSAGE value="refactor: 重构ui代码" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor: 重构ui代码" />
+    <MESSAGE value="feat: 添加简易json db实现" />
+    <MESSAGE value="feat: 添加新字体" />
+    <MESSAGE value="feat: 添加新字体，添加App图标" />
+    <MESSAGE value="feat: 添加项目打开失败时的事件" />
+    <MESSAGE value="feat: 文件树支持" />
+    <MESSAGE value="feat: 添加基础的编辑器结构" />
+    <MESSAGE value="feat: 添加编辑器控件" />
+    <MESSAGE value="feat: tab和滚动条联动" />
+    <MESSAGE value="feat: 支持显示lua和aly高亮" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: 支持显示lua和aly高亮" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
