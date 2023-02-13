@@ -55,7 +55,7 @@ fun MainScreen(state: MainState, paddingValues: PaddingValues) {
                 MainLeftPanel(state)
             },
             rightPanel = {
-                Box(Modifier.fillMaxSize()) {
+                Box(modifier = Modifier.fillMaxSize()) {
                     if (currentProjectState != Project.EMPTY) {
                         EditorsPanel(state)
                     } else {

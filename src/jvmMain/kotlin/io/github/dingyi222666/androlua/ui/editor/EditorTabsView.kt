@@ -1,18 +1,17 @@
 package io.github.dingyi222666.androlua.ui.editor
 
-import androidx.compose.foundation.HorizontalScrollbar
-import androidx.compose.foundation.horizontalScroll
+import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.rememberScrollState
-import androidx.compose.foundation.rememberScrollbarAdapter
-import androidx.compose.material3.Tab
-import androidx.compose.material3.TabRow
-import androidx.compose.material3.Text
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.key
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import io.github.dingyi222666.androlua.ui.component.DesktopScrollableTabRow
+import io.github.dingyi222666.androlua.ui.fileTree.getFileIcon
 
 /**
  * @author: dingyi
@@ -46,7 +45,7 @@ fun BoxScope.EditorScrollableTab(model: EditorState) {
     ) {
         DesktopScrollableTabRow(
             selectedTabIndex = model.currentActiveEditorIndex,
-            edgePadding = 16.dp,
+            edgePadding = 0.dp,
             scrollState = scrollState,
             modifier = Modifier
                 .wrapContentSize(align = Alignment.CenterStart)
@@ -55,12 +54,23 @@ fun BoxScope.EditorScrollableTab(model: EditorState) {
 
             for (index in model.editors.indices) {
                 val editorModel = model.editors[index]
-
                 Tab(
-                    text = { Text(editorModel.path.name) },
+                    text = {
+                        Text(editorModel.path.name)
+                    },
+                    /*
+                    icon = {
+                        // 不怎么支持，removed
+                          Icon(
+                              modifier = Modifier.width(24.dp).height(24.dp),
+                              painter = getFileIcon(file = editorModel.path),
+                              contentDescription = null
+                          )
+                    }, */
                     selected = model.currentActiveEditorIndex == index,
-                    onClick = { model.currentActiveEditorIndex = index }
+                    onClick = { model.activeEditor(index) }
                 )
+
             }
         }
     }
@@ -68,10 +78,19 @@ fun BoxScope.EditorScrollableTab(model: EditorState) {
     // A Scrollbar for the ScrollableTabRow, aligned to the top
     HorizontalScrollbar(
         // Modifier for the Scrollbar, align to the top start
-        modifier = Modifier.align(Alignment.TopStart),
+        modifier = Modifier.align(Alignment.TopStart)
+            .height(4.dp),
         // The adapter for the Scrollbar, providing the scroll state and the content size
         adapter = rememberScrollbarAdapter(
             scrollState = scrollState
+        ),
+        style = ScrollbarStyle(
+            minimalHeight = 4.dp,
+            thickness = 8.dp,
+            shape = RoundedCornerShape(4.dp),
+            hoverDurationMillis = 300,
+            unhoverColor = MaterialTheme.colorScheme.outlineVariant.copy(alpha = 0f),
+            hoverColor = MaterialTheme.colorScheme.outlineVariant.copy(alpha = 0.80f)
         )
     )
 }

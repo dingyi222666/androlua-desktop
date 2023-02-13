@@ -21,6 +21,7 @@ class EditorState(
     val editors = mutableStateListOf<EditorModel>()
 
     var currentActiveEditorIndex by mutableStateOf(0)
+        private set
 
     fun syncFromDisk() {
         currentProject.value.getOpenedFiles().forEach {
@@ -30,13 +31,14 @@ class EditorState(
 
     fun currentActiveEditor() = editors.getOrNull(currentActiveEditorIndex)
 
+    fun activeEditor(index:Int) {
+        currentActiveEditor()?.saveCaretPosition()
+        currentActiveEditorIndex = index
+    }
+
     fun openFile(file: File) {
-        println("file:$file ${currentProject.value.supportOpen(file)}")
         if (currentProject.value.supportOpen(file)) {
             val editorModel = EditorModel(this, file)
-            mainState.scope.launch {
-                withContext(Dispatchers.IO) { editorModel.init() }
-            }
             editors.add(editorModel)
             currentProject.value.addOpenedFile(file)
             currentActiveEditorIndex = editors.lastIndex

@@ -4,6 +4,8 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import org.fife.ui.rsyntaxtextarea.RSyntaxTextArea
+import org.fife.ui.rsyntaxtextarea.SyntaxConstants
+import org.fife.ui.rsyntaxtextarea.SyntaxScheme
 import org.fife.ui.rtextarea.RTextScrollPane
 import java.io.File
 
@@ -19,9 +21,11 @@ class EditorModel(
 
     private var buffer = StringBuilder()
 
+    var caretPosition = 0
+        private set
 
     private var isInit = false
-    var isReading by mutableStateOf(false)
+    var isReading by mutableStateOf(true)
         private set
 
     internal val syntaxTextArea by lazy(LazyThreadSafetyMode.NONE) {
@@ -29,7 +33,6 @@ class EditorModel(
     }
 
     internal val rtEditorPane by lazy(LazyThreadSafetyMode.NONE) { RTextScrollPane(syntaxTextArea) }
-
 
     fun syncFromDisk() {
         isReading = true
@@ -47,17 +50,41 @@ class EditorModel(
 
     fun init() {
         if (isInit) return
+
         syncFromDisk()
         syncToEditor()
+        syntaxTextArea.addCaretListener {
+            write(syntaxTextArea.text)
+        }
+
+        syntaxTextArea.syntaxEditingStyle = when (path.extension) {
+            "lua","aly" -> SyntaxConstants.SYNTAX_STYLE_LUA
+            "java" -> SyntaxConstants.SYNTAX_STYLE_JAVA
+            "xml" -> SyntaxConstants.SYNTAX_STYLE_XML
+            "kt" -> SyntaxConstants.SYNTAX_STYLE_KOTLIN
+            "json" -> SyntaxConstants.SYNTAX_STYLE_JSON
+            "js" -> SyntaxConstants.SYNTAX_STYLE_JAVASCRIPT
+            "html" -> SyntaxConstants.SYNTAX_STYLE_HTML
+            "css" -> SyntaxConstants.SYNTAX_STYLE_CSS
+            "properties" -> SyntaxConstants.SYNTAX_STYLE_PROPERTIES_FILE
+            else -> SyntaxConstants.SYNTAX_STYLE_NONE
+        }
+
+
         isInit = true
     }
 
     fun getEditorPane(): RTextScrollPane {
         syncToEditor()
-        syntaxTextArea.addCaretListener {
-            write(syntaxTextArea.text)
-        }
         return rtEditorPane
+    }
+
+    fun syncCaretPosition() {
+        syntaxTextArea.caretPosition = caretPosition
+    }
+
+    fun saveCaretPosition() {
+        caretPosition = syntaxTextArea.caretPosition
     }
 
     fun write(text: String) {
@@ -84,6 +111,8 @@ class EditorModel(
     override fun hashCode(): Int {
         return path.hashCode()
     }
+
+    fun getText() = buffer
 
 
 }
