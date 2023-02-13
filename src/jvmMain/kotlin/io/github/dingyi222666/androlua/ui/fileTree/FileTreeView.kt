@@ -18,6 +18,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import cafe.adriel.bonsai.core.Bonsai
 import cafe.adriel.bonsai.core.BonsaiStyle
+import cafe.adriel.bonsai.core.OnNodeClick
 import cafe.adriel.bonsai.core.node.Node
 import cafe.adriel.bonsai.core.tree.Tree
 import io.github.dingyi222666.androlua.ui.resources.rememberVectorPainter
@@ -34,10 +35,12 @@ import java.io.File
 @Composable
 fun FileTree(
     tree: Tree<Path>,
+    onClick: OnNodeClick<Path> = null,
     style: BonsaiStyle<Path> = NewFileSystemBonsaiStyle()
 ) {
     Bonsai(
         modifier = Modifier.padding(top = 8.dp, start = 8.dp),
+        onClick = onClick,
         tree = tree,
         style = style
     )

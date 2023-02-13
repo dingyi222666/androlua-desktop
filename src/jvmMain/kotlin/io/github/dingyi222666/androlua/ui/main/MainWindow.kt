@@ -55,10 +55,12 @@ fun MainScreen(state: MainState, paddingValues: PaddingValues) {
                 MainLeftPanel(state)
             },
             rightPanel = {
-                if (state.currentProject.value != Project.EMPTY) {
-                    EditorsPanel(state)
-                } else {
-                    EditorEmptyView()
+                Box(Modifier.fillMaxSize()) {
+                    if (currentProjectState != Project.EMPTY) {
+                        EditorsPanel(state)
+                    } else {
+                        EditorEmptyView()
+                    }
                 }
             }
         )
@@ -70,6 +72,7 @@ fun MainScreen(state: MainState, paddingValues: PaddingValues) {
 fun MainLeftPanel(state: MainState) = Column(
     modifier = Modifier.background(MaterialTheme.colorScheme.surfaceVariant)
 ) {
+
     FileTreeViewTabView()
 
     if (state.currentProject.value != Project.EMPTY) {
@@ -77,7 +80,13 @@ fun MainLeftPanel(state: MainState) = Column(
             tree = FileSystemTree(
                 rootPath = state.currentProject.value.rootDir,
                 selfInclude = true
-            )
+            ),
+            onClick = {
+                val file = it.content.toFile()
+                if (file.isFile) {
+                    state.editorState.openFile(file)
+                }
+            }
         )
     }
 

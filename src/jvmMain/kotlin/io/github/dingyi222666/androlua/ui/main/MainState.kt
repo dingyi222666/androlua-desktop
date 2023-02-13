@@ -35,7 +35,7 @@ class MainState(application: ApplicationState) : WindowState(application) {
 
     val editorState by lazy { EditorState(this) }
 
-    var loadProjectState by mutableStateOf(false)
+    var loadProjectState by mutableStateOf(true)
 
     @Composable
     override fun newWindow() {
@@ -99,6 +99,8 @@ class MainState(application: ApplicationState) : WindowState(application) {
 
         currentProject
             .emit(project)
+
+        editorState.syncFromDisk()
 
         return project
     }

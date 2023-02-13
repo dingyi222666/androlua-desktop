@@ -2,7 +2,11 @@ package io.github.dingyi222666.androlua.ui.editor
 
 import androidx.compose.runtime.*
 import io.github.dingyi222666.androlua.ui.main.MainState
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import java.io.File
+import kotlin.math.max
 
 /**
  * @author: dingyi
@@ -27,12 +31,24 @@ class EditorState(
     fun currentActiveEditor() = editors.getOrNull(currentActiveEditorIndex)
 
     fun openFile(file: File) {
-        editors.add(EditorModel(this, file))
-        currentProject.value.addOpenedFile(file)
+        println("file:$file ${currentProject.value.supportOpen(file)}")
+        if (currentProject.value.supportOpen(file)) {
+            val editorModel = EditorModel(this, file)
+            mainState.scope.launch {
+                withContext(Dispatchers.IO) { editorModel.init() }
+            }
+            editors.add(editorModel)
+            currentProject.value.addOpenedFile(file)
+            currentActiveEditorIndex = editors.lastIndex
+        }
     }
 
     fun closeFile(file: File) {
-        editors.removeIf { it.path == file }
+        val currentModel = editors.find { it.path.absolutePath == file.absolutePath }
+        val indexOf = editors.indexOf(currentModel)
+        currentActiveEditorIndex = max(0, indexOf - 1)
+        editors.remove(currentModel)
         currentProject.value.removeOpenedFile(file)
+
     }
 }

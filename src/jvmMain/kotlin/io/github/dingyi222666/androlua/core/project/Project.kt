@@ -46,6 +46,13 @@ class Project(
         }
     }
 
+    fun supportOpen(file: File): Boolean {
+        return when (file.extension) {
+            "lua", "aly" -> true
+            else -> false
+        }
+    }
+
     companion object {
 
         val EMPTY = Project(File(""))

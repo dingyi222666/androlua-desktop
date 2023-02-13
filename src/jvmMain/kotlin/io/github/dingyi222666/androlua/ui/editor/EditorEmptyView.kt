@@ -1,9 +1,6 @@
 package io.github.dingyi222666.androlua.ui.editor
 
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.*
 import androidx.compose.material3.Text
 import androidx.compose.material.icons.filled.*
 import androidx.compose.material.icons.Icons
@@ -14,6 +11,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import javax.swing.Box
 
 /**
  * @author: dingyi
@@ -21,7 +19,7 @@ import androidx.compose.ui.unit.sp
  * @description:
  **/
 @Composable
-fun EditorEmptyView() = Box(Modifier.fillMaxSize()) {
+fun BoxScope.EditorEmptyView() {
     Column(Modifier.align(Alignment.Center)) {
         Icon(
             Icons.Default.Code,
