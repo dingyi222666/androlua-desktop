@@ -6,8 +6,12 @@ import androidx.compose.material3.DropdownMenu
 import androidx.compose.material3.DropdownMenuItem
 import androidx.compose.material3.Text
 import androidx.compose.runtime.*
+import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Size
+import androidx.compose.ui.input.pointer.PointerEventPass
+import androidx.compose.ui.input.pointer.PointerEventType
+import androidx.compose.ui.input.pointer.onPointerEvent
 import androidx.compose.ui.unit.dp
 import io.github.dingyi222666.androlua.ui.component.DropdownSubMenu
 
@@ -17,11 +21,12 @@ import io.github.dingyi222666.androlua.ui.component.DropdownSubMenu
  * @description:
  **/
 
+@OptIn(ExperimentalComposeUiApi::class)
 @Composable
 fun MainTitleBarPopupMenu(state: MainState, expanded: Boolean, onDismissRequest: () -> Unit) {
 
 
-    var isOpenFileChooserDialog by remember {  mutableStateOf(false) }
+    var isOpenFileChooserDialog by remember { mutableStateOf(false) }
 
     val menuClicks = { value: String, menuState: MutableState<Boolean> ->
         when (value) {
@@ -33,7 +38,7 @@ fun MainTitleBarPopupMenu(state: MainState, expanded: Boolean, onDismissRequest:
         onDismissRequest()
     }
 
-    MainFileChooser(state,isOpenFileChooserDialog) {
+    MainFileChooser(state, isOpenFileChooserDialog) {
         isOpenFileChooserDialog = false
     }
 
@@ -43,7 +48,17 @@ fun MainTitleBarPopupMenu(state: MainState, expanded: Boolean, onDismissRequest:
         onDismissRequest = onDismissRequest
     ) {
         for ((key, value) in menuItems) {
-            DropdownSubMenu(key, expanded, Size(-260f, -40f)) { _, parentMenuExpand ->
+            DropdownSubMenu(
+                text = key,
+                enabled = expanded,
+                parentSize = Size(-260f, -40f),
+                modifier = Modifier.onPointerEvent(
+                    PointerEventType.Enter,
+                    PointerEventPass.Main,
+                ) {
+
+                }
+            ) { _, parentMenuExpand ->
                 for (item in value) {
                     DropdownMenuItem(
                         text = {

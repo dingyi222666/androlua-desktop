@@ -11,12 +11,10 @@ import java.io.File
 object MainRepository {
 
 
-    fun openProject(file: File):Project {
+    fun openProject(file: File): Project {
         if (!Project.isProjectDir(file)) {
             error("这不是一个项目")
         }
-        val project = Project(file)
-        project.initProjectData()
-        return project
+        return Project(file)
     }
 }

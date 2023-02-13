@@ -2,6 +2,7 @@ package io.github.dingyi222666.androlua.ui.editor
 
 import androidx.compose.runtime.*
 import io.github.dingyi222666.androlua.ui.main.MainState
+import java.io.File
 
 /**
  * @author: dingyi
@@ -15,6 +16,23 @@ class EditorState(
 
     val editors = mutableStateListOf<EditorModel>()
 
-    var currentSelectedEditorIndex by remember { mutableStateOf(0) }
+    var currentActiveEditorIndex by mutableStateOf(0)
 
+    fun syncFromDisk() {
+        currentProject.value.getOpenedFiles().forEach {
+            editors.add(EditorModel(this, it))
+        }
+    }
+
+    fun currentActiveEditor() = editors.getOrNull(currentActiveEditorIndex)
+
+    fun openFile(file: File) {
+        editors.add(EditorModel(this, file))
+        currentProject.value.addOpenedFile(file)
+    }
+
+    fun closeFile(file: File) {
+        editors.removeIf { it.path == file }
+        currentProject.value.removeOpenedFile(file)
+    }
 }

@@ -35,6 +35,7 @@ fun MainFileChooser(state: MainState, openState: Boolean, onDismissRequest: () -
                     runCatching {
                         state.openProject(selectDir)
                     }.onFailure {
+                        it.printStackTrace()
                         isShowErrorProjectState = true
                     }
                 }

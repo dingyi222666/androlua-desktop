@@ -23,7 +23,7 @@ fun EditorTabsView(model: EditorState) = Row(
 ) {
     Column {
         ScrollableTabRow(
-            selectedTabIndex = model.currentSelectedEditorIndex,
+            selectedTabIndex = model.currentActiveEditorIndex,
             modifier = Modifier.wrapContentWidth(),
             edgePadding = 16.dp
         ) {
@@ -31,8 +31,8 @@ fun EditorTabsView(model: EditorState) = Row(
                 val editorModel = model.editors[index]
                 Tab(
                     text = { Text(editorModel.path.name) },
-                    selected = model.currentSelectedEditorIndex == index,
-                    onClick = { model.currentSelectedEditorIndex = index }
+                    selected = model.currentActiveEditorIndex == index,
+                    onClick = { model.currentActiveEditorIndex = index }
                 )
             }
         }

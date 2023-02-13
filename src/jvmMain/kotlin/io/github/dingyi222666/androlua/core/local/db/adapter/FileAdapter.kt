@@ -16,6 +16,9 @@ class FileAdapter(
         return if (path.exists()) {
             JSONObject(path.readText())
         } else {
+            path.parentFile.mkdirs()
+            path.createNewFile()
+            path.writeText("{}")
             null
         }
     }

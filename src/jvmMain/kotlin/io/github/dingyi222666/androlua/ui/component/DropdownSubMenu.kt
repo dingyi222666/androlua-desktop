@@ -28,6 +28,7 @@ fun DropdownSubMenu(
     text: String,
     enabled: Boolean,
     parentSize: Size,
+    modifier:Modifier = Modifier,
     context: @Composable (ColumnScope.(currentSize: Size, parentMenuExpand: MutableState<Boolean>) -> Unit) = { _, _ -> }
 ) {
 
@@ -38,6 +39,7 @@ fun DropdownSubMenu(
         text = {
             Box(
                 modifier = Modifier
+                    .then(modifier)
                     .fillMaxSize()
                     .onGloballyPositioned { coordinates ->
                         size = coordinates.size.toSize()

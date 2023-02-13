@@ -12,6 +12,7 @@ import androidx.compose.ui.unit.dp
 import cafe.adriel.bonsai.filesystem.FileSystemTree
 import io.github.dingyi222666.androlua.core.project.Project
 import io.github.dingyi222666.androlua.ui.editor.EditorEmptyView
+import io.github.dingyi222666.androlua.ui.editor.EditorsPanel
 import io.github.dingyi222666.androlua.ui.fileTree.FileTree
 import io.github.dingyi222666.androlua.ui.fileTree.FileTreeViewTabView
 
@@ -44,8 +45,6 @@ fun MainScreen(state: MainState, paddingValues: PaddingValues) {
 
     val currentProjectState by state.currentProject.collectAsState()
 
-    println(currentProjectState.rootDir)
-
     Column(
         modifier = Modifier.background(MaterialTheme.colorScheme.background)
             .padding(paddingValues)
@@ -56,7 +55,11 @@ fun MainScreen(state: MainState, paddingValues: PaddingValues) {
                 MainLeftPanel(state)
             },
             rightPanel = {
-                EditorEmptyView()
+                if (state.currentProject.value != Project.EMPTY) {
+                    EditorsPanel(state)
+                } else {
+                    EditorEmptyView()
+                }
             }
         )
 
@@ -76,7 +79,9 @@ fun MainLeftPanel(state: MainState) = Column(
                 selfInclude = true
             )
         )
-    } else {
+    }
+
+    if (state.loadProjectState) {
         LinearProgressIndicator(
             modifier = Modifier
                 .padding(top = 6.dp)

@@ -9,6 +9,7 @@ import io.github.dingyi222666.androlua.core.repository.MainRepository
 import io.github.dingyi222666.androlua.preferences
 import io.github.dingyi222666.androlua.ui.common.LocalWindowScope
 import io.github.dingyi222666.androlua.ui.common.WindowState
+import io.github.dingyi222666.androlua.ui.editor.EditorState
 import io.github.dingyi222666.androlua.ui.resources.LocalAppResources
 import io.github.dingyi222666.androlua.ui.resources.theme.AppTheme
 import kotlinx.coroutines.Dispatchers
@@ -31,6 +32,10 @@ class MainState(application: ApplicationState) : WindowState(application) {
     val currentProject = MutableStateFlow(Project.EMPTY)
 
     val openRecentProjectErrorSnackbarHost = SnackbarHostState()
+
+    val editorState by lazy { EditorState(this) }
+
+    var loadProjectState by mutableStateOf(false)
 
     @Composable
     override fun newWindow() {
@@ -62,11 +67,13 @@ class MainState(application: ApplicationState) : WindowState(application) {
                     it.remove("lastProjectPath")
                 }
                 openRecentProjectErrorSnackbarHost.showSnackbar("打开上次的项目失败，已重置打开状态")
+                loadProjectState = false
             }.flowOn(Dispatchers.IO)
                 .let {
                     scope.launch {
                         delay(1000)
                         it.collect()
+                        loadProjectState = false
                     }
                 }
         }
@@ -83,6 +90,9 @@ class MainState(application: ApplicationState) : WindowState(application) {
 
 
     suspend fun openProject(path: File): Project {
+
+        loadProjectState = true
+
         val project = MainRepository.openProject(path)
 
         withContext(Dispatchers.IO) { project.initProjectData() }
