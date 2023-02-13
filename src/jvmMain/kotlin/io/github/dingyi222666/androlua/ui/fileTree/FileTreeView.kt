@@ -22,6 +22,7 @@ import cafe.adriel.bonsai.core.node.Node
 import cafe.adriel.bonsai.core.tree.Tree
 import io.github.dingyi222666.androlua.ui.resources.rememberVectorPainter
 import okio.Path
+import java.io.File
 
 
 /**
@@ -34,13 +35,9 @@ import okio.Path
 fun FileTree(
     tree: Tree<Path>,
     style: BonsaiStyle<Path> = NewFileSystemBonsaiStyle()
-) = Column(
-    modifier = Modifier.background(MaterialTheme.colorScheme.surfaceVariant)
 ) {
-    FileTreeViewTabView()
-
     Bonsai(
-        modifier = Modifier.padding(top = 16.dp, start = 8.dp),
+        modifier = Modifier.padding(top = 8.dp, start = 8.dp),
         tree = tree,
         style = style
     )
@@ -56,6 +53,7 @@ fun NewFileSystemBonsaiStyle(): BonsaiStyle<Path> = BonsaiStyle(
     nodeExpandedIcon = { node ->
         getNodeIcon(node)
     },
+    // nodeSelectedBackgroundColor = MaterialTheme.colorScheme.secondaryContainer,
     nodeNameTextStyle = MaterialTheme.typography.labelMedium,
 )
 
@@ -64,22 +62,28 @@ internal fun getNodeIcon(node: Node<Path>): Painter? {
     val file = node.content.toFile()
 
     return when {
-        file.isFile -> when (file.extension) {
-            "lua", "aly" -> rememberVectorPainter(Icons.Default.Code, Color(0xff2f2f98))
-            "kt" -> rememberVectorPainter(Icons.Default.Code, Color(0xFF3E86A0))
-            "xml" -> rememberVectorPainter(Icons.Default.Code, Color(0xFFC19C5F))
-            "txt" -> rememberVectorPainter(Icons.Default.Description, Color(0xFF87939A))
-            "md" -> rememberVectorPainter(Icons.Default.Description, Color(0xFF87939A))
-            "gitignore" -> rememberVectorPainter(Icons.Default.BrokenImage, Color(0xFF87939A))
-            "gradle" -> rememberVectorPainter(Icons.Default.Build, Color(0xFF87939A))
-            "kts" -> rememberVectorPainter(Icons.Default.Build, Color(0xFF3E86A0))
-            "properties" -> rememberVectorPainter(Icons.Default.Settings, Color(0xFF62B543))
-            "bat" -> rememberVectorPainter(Icons.Default.Launch, Color(0xFF87939A))
-            else -> rememberVectorPainter(Icons.Default.TextSnippet, Color(0xFF87939A))
-        }
+        file.isFile -> getFileIcon(file)
 
         else -> null
     }
+}
+
+@Composable
+fun getFileIcon(file: File): Painter {
+    return when (file.extension) {
+        "lua", "aly" -> rememberVectorPainter(Icons.Default.Code, Color(0xff2f2f98))
+        "kt" -> rememberVectorPainter(Icons.Default.Code, Color(0xFF3E86A0))
+        "xml" -> rememberVectorPainter(Icons.Default.Code, Color(0xFFC19C5F))
+        "txt" -> rememberVectorPainter(Icons.Default.Description, Color(0xFF87939A))
+        "md" -> rememberVectorPainter(Icons.Default.Description, Color(0xFF87939A))
+        "gitignore" -> rememberVectorPainter(Icons.Default.BrokenImage, Color(0xFF87939A))
+        "gradle" -> rememberVectorPainter(Icons.Default.Build, Color(0xFF87939A))
+        "kts" -> rememberVectorPainter(Icons.Default.Build, Color(0xFF3E86A0))
+        "properties" -> rememberVectorPainter(Icons.Default.Settings, Color(0xFF62B543))
+        "bat" -> rememberVectorPainter(Icons.Default.Launch, Color(0xFF87939A))
+        else -> rememberVectorPainter(Icons.Default.TextSnippet, Color(0xFF87939A))
+    }
+
 }
 
 @Composable

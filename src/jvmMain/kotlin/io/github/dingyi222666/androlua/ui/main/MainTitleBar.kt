@@ -1,9 +1,9 @@
 package io.github.dingyi222666.androlua.ui.main
 
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.*
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
@@ -27,44 +27,56 @@ fun MainTitleBar(state: MainState) {
 
     val currentProjectState by state.currentProject.collectAsState()
 
-    TitleBar(
-        state = state,
-        titleText = LocalAppResources.current.appTitle,
-        leading = {
+    Column {
 
-            Image(
-                painter = LocalAppResources.current.appIcon,
-                contentDescription = "Icon",
-                modifier = Modifier
-                    .padding(start = 16.dp, end = 16.dp)
-                    .height(24.dp)
-                    .width(24.dp),
-                contentScale = ContentScale.Fit
-            )
+        TitleBar(
+            state = state,
+            titleText = LocalAppResources.current.appTitle,
+            leading = {
 
-            TitleBarIcon(
-                painter = painterResource("images/menu.xml"),
-                contentDescription = "Menu",
-                modifier = Modifier
-                    .height(24.dp)
-                    .width(24.dp),
-                onClick = {
-                    showMainPopupMenu = true
-                },
-            ) {
-                MainTitleBarPopupMenu(state, showMainPopupMenu) {
-                    showMainPopupMenu = false
+                Image(
+                    painter = LocalAppResources.current.appIcon,
+                    contentDescription = "Icon",
+                    modifier = Modifier
+                        .padding(start = 16.dp, end = 16.dp)
+                        .height(24.dp)
+                        .width(24.dp),
+                    contentScale = ContentScale.Fit
+                )
+
+                TitleBarIcon(
+                    painter = painterResource("images/menu.xml"),
+                    contentDescription = "Menu",
+                    modifier = Modifier
+                        .height(24.dp)
+                        .width(24.dp),
+                    onClick = {
+                        showMainPopupMenu = true
+                    },
+                ) {
+                    MainTitleBarPopupMenu(state, showMainPopupMenu) {
+                        showMainPopupMenu = false
+                    }
+                }
+            },
+            trailing = {
+                if (currentProjectState != Project.EMPTY) {
+                    TitleBarIcon(
+                        painter = painterResource("images/play.xml"),
+                        contentDescription = "Run",
+                    )
                 }
             }
-        },
-        trailing = {
-            if (currentProjectState != Project.EMPTY) {
-                TitleBarIcon(
-                    painter = painterResource("images/play.xml"),
-                    contentDescription = "Run",
-                )
-            }
-        }
-    )
+        )
+
+        Box(
+            Modifier
+                .fillMaxWidth()
+                .height(1.dp)
+                .background(MaterialTheme.colorScheme.outlineVariant)
+        )
+
+    }
+
 
 }

@@ -31,7 +31,7 @@ fun EditorEmptyView() = Box(Modifier.fillMaxSize()) {
         )
 
         Text(
-            "点击左上角菜单以打开一个项目",
+            "Try to open a code file",
             color = LocalContentColor.current.copy(alpha = 0.60f),
             fontSize = 20.sp,
             modifier = Modifier.align(Alignment.CenterHorizontally).padding(16.dp)

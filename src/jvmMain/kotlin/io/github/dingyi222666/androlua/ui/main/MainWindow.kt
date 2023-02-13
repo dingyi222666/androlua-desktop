@@ -2,21 +2,18 @@ package io.github.dingyi222666.androlua.ui.main
 
 
 import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.PaddingValues
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.SnackbarHost
+import androidx.compose.foundation.layout.*
+import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.unit.dp
 import cafe.adriel.bonsai.filesystem.FileSystemTree
 import io.github.dingyi222666.androlua.core.project.Project
 import io.github.dingyi222666.androlua.ui.editor.EditorEmptyView
 import io.github.dingyi222666.androlua.ui.fileTree.FileTree
+import io.github.dingyi222666.androlua.ui.fileTree.FileTreeViewTabView
 
 
 /**
@@ -56,20 +53,36 @@ fun MainScreen(state: MainState, paddingValues: PaddingValues) {
         MainPanel(
             state = state,
             leftPanel = {
-                if (currentProjectState != Project.EMPTY) {
-                    FileTree(
-                        tree = FileSystemTree(
-                            rootPath = currentProjectState.rootDir,
-                            selfInclude = true
-                        )
-                    )
-                }
+                MainLeftPanel(state)
             },
             rightPanel = {
                 EditorEmptyView()
             }
         )
 
+    }
+}
+
+@Composable
+fun MainLeftPanel(state: MainState) = Column(
+    modifier = Modifier.background(MaterialTheme.colorScheme.surfaceVariant)
+) {
+    FileTreeViewTabView()
+
+    if (state.currentProject.value != Project.EMPTY) {
+        FileTree(
+            tree = FileSystemTree(
+                rootPath = state.currentProject.value.rootDir,
+                selfInclude = true
+            )
+        )
+    } else {
+        LinearProgressIndicator(
+            modifier = Modifier
+                .padding(top = 6.dp)
+                .height(2.dp)
+                .fillMaxWidth()
+        )
     }
 }
 
