@@ -4,59 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ef3eb604-7162-4cdd-b611-e3e802037d9f" name="Changes" comment="feat: 支持显示lua和aly高亮">
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" />
+    <list default="true" id="ef3eb604-7162-4cdd-b611-e3e802037d9f" name="Changes" comment="refactor: 迁移软件到app模块">
+      <change afterPath="$PROJECT_DIR$/editor/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor/build.gradle.kts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor/gradlew" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor/gradlew.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor/src/jvmMain/kotlin/io/github/dingyi222666/compose/editor/CodeEditor.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor/src/jvmMain/kotlin/io/github/dingyi222666/compose/editor/text/positions.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor/src/jvmMain/kotlin/io/github/dingyi222666/compose/editor/text/rbBase.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor/src/jvmTest/kotlin/EditorTest.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor/src/jvmTest/kotlin/TextTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle.kts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/settings.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/io/github/dingyi222666/androlua/Application.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/io/github/dingyi222666/androlua/Main.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/io/github/dingyi222666/androlua/core/local/db/DBAdapter.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/io/github/dingyi222666/androlua/core/local/db/JsonDB.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/io/github/dingyi222666/androlua/core/local/db/adapter/FileAdapter.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/io/github/dingyi222666/androlua/core/project/Project.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/io/github/dingyi222666/androlua/core/repository/MainRepository.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/io/github/dingyi222666/androlua/core/util/fileUtils.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/io/github/dingyi222666/androlua/ui/common/WindowState.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/io/github/dingyi222666/androlua/ui/common/composeUtil.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/io/github/dingyi222666/androlua/ui/component/DesktopTabRow.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/io/github/dingyi222666/androlua/ui/component/DropdownSubMenu.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/io/github/dingyi222666/androlua/ui/component/FileChooser.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/io/github/dingyi222666/androlua/ui/component/Material3AlertDialog.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/io/github/dingyi222666/androlua/ui/component/TitleBar.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/io/github/dingyi222666/androlua/ui/component/VerticalSplittable.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/io/github/dingyi222666/androlua/ui/editor/CodeEditor.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/io/github/dingyi222666/androlua/ui/editor/EditorEmptyView.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/io/github/dingyi222666/androlua/ui/editor/EditorModel.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/io/github/dingyi222666/androlua/ui/editor/EditorState.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/io/github/dingyi222666/androlua/ui/editor/EditorTabsView.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/io/github/dingyi222666/androlua/ui/editor/EditorsPanel.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/io/github/dingyi222666/androlua/ui/fileTree/FileTreeView.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/io/github/dingyi222666/androlua/ui/main/MainFileChooser.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/io/github/dingyi222666/androlua/ui/main/MainPanel.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/io/github/dingyi222666/androlua/ui/main/MainState.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/io/github/dingyi222666/androlua/ui/main/MainTitleBar.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/io/github/dingyi222666/androlua/ui/main/MainTitleBarPopupMenu.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/io/github/dingyi222666/androlua/ui/main/MainWindow.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/io/github/dingyi222666/androlua/ui/resources/AppResources.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/io/github/dingyi222666/androlua/ui/resources/font/AppFont.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/io/github/dingyi222666/androlua/ui/resources/theme/Color.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/io/github/dingyi222666/androlua/ui/resources/theme/Theme.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/fonts/HarmonyOS_Sans_SC_Black.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/fonts/HarmonyOS_Sans_SC_Bold.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/fonts/HarmonyOS_Sans_SC_Light.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/fonts/HarmonyOS_Sans_SC_Medium.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/fonts/HarmonyOS_Sans_SC_Regular.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/fonts/HarmonyOS_Sans_SC_Thin.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/fonts/LICENSE.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/icon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/images/circle_multiple_outline.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/images/circle_outline.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/images/cog.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/images/menu.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/images/menu_right_outline.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/images/minus.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/images/play.xml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,6 +34,9 @@
     <projectState path="$PROJECT_DIR$/app">
       <ProjectState />
     </projectState>
+    <projectState path="$PROJECT_DIR$/editor">
+      <ProjectState />
+    </projectState>
   </component>
   <component name="ExternalProjectsManager">
     <system id="GRADLE">
@@ -77,9 +44,35 @@
         <task path="$PROJECT_DIR$">
           <activation />
         </task>
+        <task path="$PROJECT_DIR$/app">
+          <activation />
+        </task>
+        <task path="$PROJECT_DIR$/editor">
+          <activation />
+        </task>
         <projects_view>
           <tree_state>
-            <expand />
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="androlua-desktop" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="app" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="app" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="app" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="compose desktop" type="c8890929:TasksNode$1" />
+              </path>
+            </expand>
             <select />
           </tree_state>
         </projects_view>
@@ -89,9 +82,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Kotlin File" />
         <option value="Kotlin Interface" />
         <option value="NewLua" />
+        <option value="Kotlin File" />
         <option value="Kotlin Class" />
       </list>
     </option>
@@ -128,7 +121,79 @@
       <recent name="G:\IdeaProjects\amdrolua-desktop\src\jvmMain\kotlin\io\github\dingyi222666\androlua" />
     </key>
   </component>
-  <component name="RunManager" selected="Kotlin.MainKt">
+  <component name="RunManager" selected="Gradle.TextTest.testLargeTextInsertAndEdit">
+    <configuration name="TextTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/editor" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":editor:cleanJvmTest" />
+            <option value=":editor:jvmTest" />
+            <option value="--tests &quot;TextTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <ForceTestExec>true</ForceTestExec>
+      <method v="2" />
+    </configuration>
+    <configuration name="TextTest.testLargeTextInsert" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/editor" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":editor:cleanJvmTest" />
+            <option value=":editor:jvmTest" />
+            <option value="--tests &quot;TextTest.testLargeTextInsert&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <ForceTestExec>true</ForceTestExec>
+      <method v="2" />
+    </configuration>
+    <configuration name="TextTest.testLargeTextInsertAndEdit" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/editor" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":editor:cleanJvmTest" />
+            <option value=":editor:jvmTest" />
+            <option value="--tests &quot;TextTest.testLargeTextInsertAndEdit&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <ForceTestExec>true</ForceTestExec>
+      <method v="2" />
+    </configuration>
     <configuration name="amdrolua-desktop [packageReleaseExe]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -151,54 +216,11 @@
       <ForceTestExec>false</ForceTestExec>
       <method v="2" />
     </configuration>
-    <configuration name="amdrolua-desktop [run]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="run" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <ForceTestExec>false</ForceTestExec>
-      <method v="2" />
-    </configuration>
-    <configuration name="amdrolua-desktop [suggestRuntimeModules]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="suggestRuntimeModules" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <ForceTestExec>false</ForceTestExec>
-      <method v="2" />
-    </configuration>
-    <configuration name="MainKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="io.github.dingyi222666.androlua.MainKt" />
-      <module name="androlua.jvmMain" />
-      <shortenClasspath name="NONE" />
+    <configuration name="TextTestKt" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="androlua-desktop.editor.jvmTest" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TextTestKt" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -216,12 +238,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Gradle.TextTest" />
+      <item itemvalue="Gradle.TextTest.testLargeTextInsert" />
+      <item itemvalue="Gradle.TextTest.testLargeTextInsertAndEdit" />
+      <item itemvalue="Gradle.amdrolua-desktop [packageReleaseExe]" />
+      <item itemvalue="JUnit.TextTestKt" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Kotlin.MainKt" />
-        <item itemvalue="Gradle.amdrolua-desktop [packageReleaseExe]" />
-        <item itemvalue="Gradle.amdrolua-desktop [suggestRuntimeModules]" />
-        <item itemvalue="Gradle.amdrolua-desktop [run]" />
+        <item itemvalue="Gradle.TextTest.testLargeTextInsertAndEdit" />
+        <item itemvalue="Gradle.TextTest.testLargeTextInsertAndEdit" />
+        <item itemvalue="Gradle.TextTest" />
+        <item itemvalue="Gradle.TextTest" />
+        <item itemvalue="Gradle.TextTest.testLargeTextInsertAndEdit" />
       </list>
     </recent_temporary>
   </component>
@@ -325,7 +355,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676297821952</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="refactor: 迁移软件到app模块">
+      <created>1676300819896</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1676300819896</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -356,7 +393,8 @@
     <MESSAGE value="feat: 添加编辑器控件" />
     <MESSAGE value="feat: tab和滚动条联动" />
     <MESSAGE value="feat: 支持显示lua和aly高亮" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: 支持显示lua和aly高亮" />
+    <MESSAGE value="refactor: 迁移软件到app模块" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor: 迁移软件到app模块" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

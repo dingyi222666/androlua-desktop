@@ -9,18 +9,8 @@ plugins {
 group = "io.github.dingyi222666"
 version = "1.0-SNAPSHOT"
 
-repositories {
-    google()
-    mavenCentral()
-    maven("https://maven.pkg.jetbrains.space/public/p/compose/dev")
-}
 
 kotlin {
-    jvm {
-        jvmToolchain(11)
-        withJava()
-    }
-
     @OptIn(org.jetbrains.compose.ExperimentalComposeLibrary::class)
     sourceSets {
         val jvmMain by getting {
@@ -46,12 +36,6 @@ kotlin {
 
 }
 
-tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
-    kotlinOptions {
-        // ...
-        freeCompilerArgs += "-opt-in=kotlin.RequiresOptIn"
-    }
-}
 
 compose.desktop {
     application {
