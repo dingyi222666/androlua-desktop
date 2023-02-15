@@ -4,11 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ef3eb604-7162-4cdd-b611-e3e802037d9f" name="Changes" comment="feat: 添加editor模块">
+    <list default="true" id="ef3eb604-7162-4cdd-b611-e3e802037d9f" name="Changes" comment="feat: 添加基于Rope的文本缓冲区实现">
+      <change afterPath="$PROJECT_DIR$/editor/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor/build.gradle.kts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor/gradlew" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor/gradlew.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor/src/jvmMain/java/ImmutableText.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor/src/jvmMain/kotlin/io/github/dingyi222666/compose/editor/CodeEditor.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor/src/jvmMain/kotlin/io/github/dingyi222666/compose/editor/text/positions.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor/src/jvmMain/kotlin/io/github/dingyi222666/compose/editor/text/rope.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor/src/jvmTest/kotlin/EditorTest.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor/src/jvmTest/kotlin/TextTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/editor/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/editor/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/editor/src/jvmMain/kotlin/io/github/dingyi222666/compose/editor/text/rbBase.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/editor/src/jvmTest/kotlin/TextTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/editor/src/jvmTest/kotlin/TextTest.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,7 +104,7 @@
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;
   }
 }</component>
   <component name="RecentsManager">
@@ -151,7 +159,8 @@
           <list>
             <option value=":editor:cleanJvmTest" />
             <option value=":editor:jvmTest" />
-            <option value="--tests &quot;TextTest.testInsert&quot;" />
+            <option value="--tests" />
+            <option value="&quot;TextTest.testInsert&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -257,9 +266,9 @@
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.TextTest" />
+        <item itemvalue="Gradle.TextTest" />
+        <item itemvalue="Gradle.TextTest" />
         <item itemvalue="Gradle.TextTest.testLargeTextDelete" />
-        <item itemvalue="Gradle.TextTest.testLargeTextInsert" />
-        <item itemvalue="Gradle.TextTest.testInsert" />
         <item itemvalue="Gradle.TextTest.testLargeTextInsert" />
       </list>
     </recent_temporary>
@@ -378,7 +387,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676333556656</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="feat: 添加基于Rope的文本缓冲区实现">
+      <created>1676476254056</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1676476254056</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -395,6 +411,7 @@
   <component name="VcsManagerConfiguration">
     <ignored-roots>
       <path value="$PROJECT_DIR$/app" />
+      <path value="$PROJECT_DIR$/editor" />
     </ignored-roots>
     <MESSAGE value="feat: 初次提交" />
     <MESSAGE value="feat: 更新ui" />
@@ -411,22 +428,8 @@
     <MESSAGE value="feat: 支持显示lua和aly高亮" />
     <MESSAGE value="refactor: 迁移软件到app模块" />
     <MESSAGE value="feat: 添加editor模块" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: 添加editor模块" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="kotlin-function">
-          <url>file://$PROJECT_DIR$/editor/src/jvmTest/kotlin/TextTest.kt</url>
-          <line>26</line>
-          <properties class="TextTest" method="testInsert">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="feat: 添加基于Rope的文本缓冲区实现" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: 添加基于Rope的文本缓冲区实现" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
