@@ -4,23 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ef3eb604-7162-4cdd-b611-e3e802037d9f" name="Changes" comment="refactor: 迁移软件到app模块">
-      <change afterPath="$PROJECT_DIR$/editor/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/editor/build.gradle.kts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/editor/gradlew" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/editor/gradlew.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/editor/src/jvmMain/kotlin/io/github/dingyi222666/compose/editor/CodeEditor.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/editor/src/jvmMain/kotlin/io/github/dingyi222666/compose/editor/text/positions.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/editor/src/jvmMain/kotlin/io/github/dingyi222666/compose/editor/text/rbBase.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/editor/src/jvmTest/kotlin/EditorTest.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/editor/src/jvmTest/kotlin/TextTest.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="ef3eb604-7162-4cdd-b611-e3e802037d9f" name="Changes" comment="feat: 添加editor模块">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/editor/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/editor/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/editor/src/jvmMain/kotlin/io/github/dingyi222666/compose/editor/text/rbBase.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/editor/src/jvmTest/kotlin/TextTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/editor/src/jvmTest/kotlin/TextTest.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,8 +72,8 @@
       <list>
         <option value="Kotlin Interface" />
         <option value="NewLua" />
-        <option value="Kotlin File" />
         <option value="Kotlin Class" />
+        <option value="Kotlin File" />
       </list>
     </option>
   </component>
@@ -104,15 +92,16 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;jdk.selected.JAVA_MODULE&quot;: &quot;corretto-17&quot;,
-    &quot;last_opened_file_path&quot;: &quot;G:/IdeaProjects/compose-jb-examples-codeviewer&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Facets&quot;,
+    &quot;last_opened_file_path&quot;: &quot;G:/IdeaProjects/amdrolua-desktop/editor/src/jvmTest/kotlin&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="G:\IdeaProjects\amdrolua-desktop\editor\src\jvmTest\kotlin" />
       <recent name="G:\IdeaProjects\amdrolua-desktop\src\jvmMain\resources\images" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -120,8 +109,11 @@
       <recent name="G:\IdeaProjects\amdrolua-desktop\src\jvmMain\resources\fonts" />
       <recent name="G:\IdeaProjects\amdrolua-desktop\src\jvmMain\kotlin\io\github\dingyi222666\androlua" />
     </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
   </component>
-  <component name="RunManager" selected="Gradle.TextTest.testLargeTextInsertAndEdit">
+  <component name="RunManager" selected="Gradle.TextTest">
     <configuration name="TextTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -136,6 +128,78 @@
             <option value=":editor:cleanJvmTest" />
             <option value=":editor:jvmTest" />
             <option value="--tests &quot;TextTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <ForceTestExec>true</ForceTestExec>
+      <method v="2" />
+    </configuration>
+    <configuration name="TextTest.testInsert" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/editor" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":editor:cleanJvmTest" />
+            <option value=":editor:jvmTest" />
+            <option value="--tests &quot;TextTest.testInsert&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <ForceTestExec>true</ForceTestExec>
+      <method v="2" />
+    </configuration>
+    <configuration name="TextTest.testLargeTextDelete" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/editor" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":editor:cleanJvmTest" />
+            <option value=":editor:jvmTest" />
+            <option value="--tests &quot;TextTest.testLargeTextDelete&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <ForceTestExec>true</ForceTestExec>
+      <method v="2" />
+    </configuration>
+    <configuration name="TextTest.testLargeTextGet" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/editor" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":editor:cleanJvmTest" />
+            <option value=":editor:jvmTest" />
+            <option value="--tests &quot;TextTest.testLargeTextGet&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -170,61 +234,6 @@
       <ForceTestExec>true</ForceTestExec>
       <method v="2" />
     </configuration>
-    <configuration name="TextTest.testLargeTextInsertAndEdit" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/editor" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":editor:cleanJvmTest" />
-            <option value=":editor:jvmTest" />
-            <option value="--tests &quot;TextTest.testLargeTextInsertAndEdit&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <ForceTestExec>true</ForceTestExec>
-      <method v="2" />
-    </configuration>
-    <configuration name="amdrolua-desktop [packageReleaseExe]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="packageReleaseExe" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <ForceTestExec>false</ForceTestExec>
-      <method v="2" />
-    </configuration>
-    <configuration name="TextTestKt" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="androlua-desktop.editor.jvmTest" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="TextTestKt" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration default="true" type="JetRunConfigurationType">
       <module name="amdrolua-desktop" />
       <method v="2">
@@ -240,18 +249,18 @@
     </configuration>
     <list>
       <item itemvalue="Gradle.TextTest" />
+      <item itemvalue="Gradle.TextTest.testLargeTextDelete" />
+      <item itemvalue="Gradle.TextTest.testInsert" />
+      <item itemvalue="Gradle.TextTest.testLargeTextGet" />
       <item itemvalue="Gradle.TextTest.testLargeTextInsert" />
-      <item itemvalue="Gradle.TextTest.testLargeTextInsertAndEdit" />
-      <item itemvalue="Gradle.amdrolua-desktop [packageReleaseExe]" />
-      <item itemvalue="JUnit.TextTestKt" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.TextTest.testLargeTextInsertAndEdit" />
-        <item itemvalue="Gradle.TextTest.testLargeTextInsertAndEdit" />
         <item itemvalue="Gradle.TextTest" />
-        <item itemvalue="Gradle.TextTest" />
-        <item itemvalue="Gradle.TextTest.testLargeTextInsertAndEdit" />
+        <item itemvalue="Gradle.TextTest.testLargeTextDelete" />
+        <item itemvalue="Gradle.TextTest.testLargeTextInsert" />
+        <item itemvalue="Gradle.TextTest.testInsert" />
+        <item itemvalue="Gradle.TextTest.testLargeTextInsert" />
       </list>
     </recent_temporary>
   </component>
@@ -362,7 +371,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676300819896</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="feat: 添加editor模块">
+      <created>1676333556655</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1676333556656</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -394,7 +410,23 @@
     <MESSAGE value="feat: tab和滚动条联动" />
     <MESSAGE value="feat: 支持显示lua和aly高亮" />
     <MESSAGE value="refactor: 迁移软件到app模块" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor: 迁移软件到app模块" />
+    <MESSAGE value="feat: 添加editor模块" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: 添加editor模块" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="kotlin-function">
+          <url>file://$PROJECT_DIR$/editor/src/jvmTest/kotlin/TextTest.kt</url>
+          <line>26</line>
+          <properties class="TextTest" method="testInsert">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
