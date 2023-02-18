@@ -8,7 +8,7 @@ package io.github.dingyi222666.compose.editor.text
 
 
 // change the data type from CharArray to StringBuilder
-data class RopeNode(
+internal data class RopeNode(
     var left: RopeNode?, var right: RopeNode?, val weight: Int, val data: CharSequence? = null
 )
 
@@ -86,7 +86,7 @@ class MergeCharSequence(
     }
 }
 
-class Rope(val root: RopeNode) : CharSequence {
+class Rope internal constructor(private val root: RopeNode) : CharSequence {
 
     override val length: Int = root.weight
 
@@ -165,7 +165,7 @@ class Rope(val root: RopeNode) : CharSequence {
         } // If the node does not have data, it is an internal node
         else {
             // Compare the index with the weight of the left child
-            if (index <= node.left!!.weight) {
+            if (index <= (node.left?.weight ?: -1)) {
                 // Split the left child at the index
                 val (left1, left2) = split(node.left!!, index)
                 // Keep the right child as it is
@@ -190,7 +190,11 @@ class Rope(val root: RopeNode) : CharSequence {
         return insert(length, source)
     }
 
-    fun insert(index: Int, source: CharSequence): Rope {
+    fun insert(index: Int, originSource: CharSequence): Rope {
+        val source = if (originSource is StringBuilder) {
+            originSource.toString()
+        } else originSource
+
         if (index == 0) {
             return Rope(connect(buildTree(source), root)!!)
         }
@@ -236,7 +240,7 @@ class Rope(val root: RopeNode) : CharSequence {
         }
 
         // If the start index is not zero and the end index is the length of the Rope, return the left part
-         if (start > 0 && end == length) {
+        if (start > 0 && end == length) {
             // Split the Rope at the start index
             val (left, _) = split(root, start)
             // Return the left part
@@ -278,9 +282,12 @@ class Rope(val root: RopeNode) : CharSequence {
 
 
     override fun subSequence(startIndex: Int, endIndex: Int): CharSequence {
+        if (startIndex == 0 && endIndex == length) {
+            return this
+        }
         val (left, right) = split(root, startIndex)
-        val (_, right2) = split(right!!, endIndex - startIndex)
-        return Rope(right2!!)
+        val (middle, _) = split(right!!, endIndex - startIndex)
+        return Rope(middle!!)
     }
 
 
