@@ -116,11 +116,61 @@ class ListLineTracker : LineTracker, TextChangeListener {
         }
     }
 
+
+    private fun onDeleteText(event: TextChangeEvent) {
+        val text = event.text
+
+        // start line
+        var currentLineNumber = getLineNumber(event.endOffset) - 1
+        var currentOffset = event.text.length - 1
+        var currentLine = lines[currentLineNumber]
+
+        while (currentOffset >= 0) {
+            val currentChar = text[currentOffset]
+            val lastChar = text.getOrNull(currentOffset - 1) ?: '\u0000'
+            if (currentChar != '\r' && currentChar != '\n') {
+                currentOffset--
+                currentLine.length--
+                continue
+            }
+
+            val lineSeparator = LineSeparator.fromChar(lastChar, currentChar)
+
+            currentOffset -= lineSeparator.length
+
+            val lastLine = lines.getOrNull(currentLineNumber - 1) ?: break
+
+            if (currentLine.length < 1) {
+                lines.removeAt(currentLineNumber)
+            } else {
+                lastLine.length = currentLine.length + lastLine.length - lastLine.lineSeparatorLength
+                lastLine.lineSeparatorLength = 0
+                lines.removeAt(currentLineNumber)
+            }
+
+            currentLine = lastLine
+            currentLineNumber = max(0, currentLineNumber - 1)
+
+        }
+
+        // remove lastLine
+        if (currentLine.length < 1) {
+            lines.removeAt(currentLineNumber)
+        }
+
+        // update old line offset
+        for (i in currentLineNumber + 1 until lines.size) {
+            lines[i].startOffset -= event.text.length
+        }
+
+
+    }
+
     override fun onTextChange(event: TextChangeEvent) {
         currentRope = event.newRope
         when (event.eventType) {
             TextChangeEvent.EventType.INSERT -> onInsertText(event)
-            else -> {}
+            else -> onDeleteText(event)
         }
     }
 

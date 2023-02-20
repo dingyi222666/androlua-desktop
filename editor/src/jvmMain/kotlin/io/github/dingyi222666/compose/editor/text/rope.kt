@@ -224,6 +224,7 @@ class Rope internal constructor(private val root: RopeNode) : CharSequence {
             return RopeNode(left, right, left.weight + right.weight, null)
         }
 
+
         if (node.left != null) {
             node.left = balanceNode(node.left!!)
         }

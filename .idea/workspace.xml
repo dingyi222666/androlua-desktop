@@ -4,12 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ef3eb604-7162-4cdd-b611-e3e802037d9f" name="Changes" comment="feat: 添加基于Rope的文本缓冲区实现">
-      <change afterPath="$PROJECT_DIR$/editor/src/jvmMain/kotlin/io/github/dingyi222666/compose/editor/text/LineSeparator.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/editor/src/jvmMain/kotlin/io/github/dingyi222666/compose/editor/text/TextModel.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/editor/src/jvmTest/kotlin/TextModelTest.kt" afterDir="false" />
+    <list default="true" id="ef3eb604-7162-4cdd-b611-e3e802037d9f" name="Changes" comment="feat: 完成文本插入支持">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/editor/src/jvmMain/kotlin/io/github/dingyi222666/compose/editor/text/ListLineTracker.kt" beforeDir="false" afterPath="$PROJECT_DIR$/editor/src/jvmMain/kotlin/io/github/dingyi222666/compose/editor/text/ListLineTracker.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/editor/src/jvmMain/kotlin/io/github/dingyi222666/compose/editor/text/TextModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/editor/src/jvmMain/kotlin/io/github/dingyi222666/compose/editor/text/TextModel.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/editor/src/jvmMain/kotlin/io/github/dingyi222666/compose/editor/text/rope.kt" beforeDir="false" afterPath="$PROJECT_DIR$/editor/src/jvmMain/kotlin/io/github/dingyi222666/compose/editor/text/rope.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/editor/src/jvmTest/kotlin/TextModelTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/editor/src/jvmTest/kotlin/TextModelTest.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,6 +45,24 @@
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="androlua-desktop" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="androlua-desktop" type="f1a62948:ProjectNode" />
+                <item name="app" type="2d1252cf:ModuleNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="androlua-desktop" type="f1a62948:ProjectNode" />
+                <item name="app" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="androlua-desktop" type="f1a62948:ProjectNode" />
+                <item name="app" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="compose desktop" type="c8890929:TasksNode$1" />
               </path>
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
@@ -114,8 +132,8 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.TextModelTest.testInsert">
-    <configuration name="TextModelTest.testInsert" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+  <component name="RunManager" selected="Gradle.TextModelTest">
+    <configuration name="TextModelTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/editor" />
@@ -128,7 +146,7 @@
           <list>
             <option value=":editor:cleanJvmTest" />
             <option value=":editor:jvmTest" />
-            <option value="--tests &quot;TextModelTest.testInsert&quot;" />
+            <option value="--tests &quot;TextModelTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -139,7 +157,7 @@
       <ForceTestExec>true</ForceTestExec>
       <method v="2" />
     </configuration>
-    <configuration name="TextTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="TextModelTest.testTextDeleteAndGetLineContent" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/editor" />
@@ -152,7 +170,7 @@
           <list>
             <option value=":editor:cleanJvmTest" />
             <option value=":editor:jvmTest" />
-            <option value="--tests &quot;TextTest&quot;" />
+            <option value="--tests &quot;TextModelTest.testTextDeleteAndGetLineContent&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -163,7 +181,7 @@
       <ForceTestExec>true</ForceTestExec>
       <method v="2" />
     </configuration>
-    <configuration name="TextTest.testLargeTextDelete" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="TextModelTest.testTextDeleteAndGetLineContent1" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/editor" />
@@ -176,7 +194,7 @@
           <list>
             <option value=":editor:cleanJvmTest" />
             <option value=":editor:jvmTest" />
-            <option value="--tests &quot;TextTest.testLargeTextDelete&quot;" />
+            <option value="--tests &quot;TextModelTest.testTextDeleteAndGetLineContent1&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -187,7 +205,7 @@
       <ForceTestExec>true</ForceTestExec>
       <method v="2" />
     </configuration>
-    <configuration name="TextTest.testLargeTextGet" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="TextModelTest.testTextDeleteAndGetLineContent2" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/editor" />
@@ -200,7 +218,7 @@
           <list>
             <option value=":editor:cleanJvmTest" />
             <option value=":editor:jvmTest" />
-            <option value="--tests &quot;TextTest.testLargeTextGet&quot;" />
+            <option value="--tests &quot;TextModelTest.testTextDeleteAndGetLineContent2&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -211,29 +229,13 @@
       <ForceTestExec>true</ForceTestExec>
       <method v="2" />
     </configuration>
-    <configuration name="TextTest.testLargeTextInsert" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/editor" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":editor:cleanJvmTest" />
-            <option value=":editor:jvmTest" />
-            <option value="--tests &quot;TextTest.testLargeTextInsert&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <ForceTestExec>true</ForceTestExec>
-      <method v="2" />
+    <configuration name="MainKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="io.github.dingyi222666.androlua.MainKt" />
+      <module name="app.jvmMain" />
+      <shortenClasspath name="NONE" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration default="true" type="JetRunConfigurationType">
       <module name="amdrolua-desktop" />
@@ -249,19 +251,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Gradle.TextModelTest.testInsert" />
-      <item itemvalue="Gradle.TextTest" />
-      <item itemvalue="Gradle.TextTest.testLargeTextDelete" />
-      <item itemvalue="Gradle.TextTest.testLargeTextGet" />
-      <item itemvalue="Gradle.TextTest.testLargeTextInsert" />
+      <item itemvalue="Gradle.TextModelTest.testTextDeleteAndGetLineContent1" />
+      <item itemvalue="Gradle.TextModelTest" />
+      <item itemvalue="Gradle.TextModelTest.testTextDeleteAndGetLineContent" />
+      <item itemvalue="Gradle.TextModelTest.testTextDeleteAndGetLineContent2" />
+      <item itemvalue="Kotlin.MainKt" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.TextModelTest.testInsert" />
-        <item itemvalue="Gradle.TextModelTest.testInsert" />
-        <item itemvalue="Gradle.TextModelTest.testInsert" />
-        <item itemvalue="Gradle.TextModelTest.testInsert" />
-        <item itemvalue="Gradle.TextTest" />
+        <item itemvalue="Gradle.TextModelTest" />
+        <item itemvalue="Gradle.TextModelTest.testTextDeleteAndGetLineContent1" />
+        <item itemvalue="Gradle.TextModelTest.testTextDeleteAndGetLineContent2" />
+        <item itemvalue="Gradle.TextModelTest.testTextDeleteAndGetLineContent" />
+        <item itemvalue="Gradle.TextModelTest" />
       </list>
     </recent_temporary>
   </component>
@@ -393,7 +395,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676477319486</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="feat: 完成文本插入支持">
+      <created>1676744664382</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1676744664382</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -428,7 +437,8 @@
     <MESSAGE value="refactor: 迁移软件到app模块" />
     <MESSAGE value="feat: 添加editor模块" />
     <MESSAGE value="feat: 添加基于Rope的文本缓冲区实现" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: 添加基于Rope的文本缓冲区实现" />
+    <MESSAGE value="feat: 完成文本插入支持" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: 完成文本插入支持" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -51,6 +51,25 @@ class TextModel : CharSequence, LineTracker {
         this.text = inserted
     }
 
+    fun delete(length: Int) {
+        delete(kotlin.math.max(0, getTextLength() - length), length)
+    }
+
+    fun  delete(startOffset: Int, endOffset: Int) {
+        val deletedText = text.subSequence(startOffset, endOffset)
+        val deleted = this.text.delete(startOffset, endOffset)
+        dispatchEvent(
+            TextChangeEvent(
+                deletedText,
+                deleted,
+                startOffset,
+                endOffset,
+                TextChangeEvent.EventType.DELETE
+            )
+        )
+        this.text = deleted
+    }
+
     fun addTextChangeListener(listener: TextChangeListener) {
         this.listener.add(listener)
     }
