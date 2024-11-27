@@ -48,6 +48,7 @@ fun BoxScope.EditorScrollableTab(model: EditorState) {
             edgePadding = 0.dp,
             scrollState = scrollState,
             modifier = Modifier
+                .fillMaxWidth()
                 .wrapContentSize(align = Alignment.CenterStart)
             // Modifier for the ScrollableTabRow, fill the maximum available width
         ) {

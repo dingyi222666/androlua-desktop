@@ -1,6 +1,7 @@
 package io.github.dingyi222666.androlua.ui.editor
 
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.key
 import androidx.compose.runtime.rememberCoroutineScope
@@ -21,7 +22,7 @@ import javax.swing.JPanel
 @Composable
 fun CodeEditor(model: EditorModel, modifier: Modifier = Modifier) = key(model) {
 
-    Box(modifier = modifier) {
+    Box(modifier = modifier.fillMaxSize()) {
         SwingPanel(
             background = Color.White,
             factory = {

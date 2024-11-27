@@ -1,34 +1,25 @@
 import org.jetbrains.compose.compose
 import org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension
 
-
 plugins {
-    kotlin("multiplatform") apply false
-    id("org.jetbrains.compose") apply false
+    kotlin("multiplatform") version libs.versions.kotlin apply false
+    alias(libs.plugins.jetbrainsCompose) apply false
+    alias(libs.plugins.compose.compiler) apply false
 }
 
-
-subprojects {
+allprojects {
     repositories {
         google()
         mavenCentral()
         maven("https://maven.pkg.jetbrains.space/public/p/compose/dev")
     }
+}
 
-    tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
+subprojects {
+    tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach {
         kotlinOptions {
-            // ...
+            jvmTarget = "11"
             freeCompilerArgs += "-opt-in=kotlin.RequiresOptIn"
         }
     }
-
-    plugins.withId("org.jetbrains.kotlin.multiplatform") {
-        configure<KotlinMultiplatformExtension> {
-            jvm {
-                jvmToolchain(11)
-                withJava()
-            }
-        }
-    }
-
 }

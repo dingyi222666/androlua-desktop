@@ -1,15 +1,20 @@
 import org.jetbrains.compose.desktop.application.dsl.TargetFormat
 
 plugins {
-    kotlin("multiplatform")
     java
-    id("org.jetbrains.compose")
+    kotlin("multiplatform")
+    alias(libs.plugins.jetbrainsCompose)
+    alias(libs.plugins.compose.compiler)
 }
 
 group = "io.github.dingyi222666.compose"
 version = "1.0-SNAPSHOT"
 
 kotlin {
+    jvmToolchain(17)
+
+    jvm()
+
     @OptIn(org.jetbrains.compose.ExperimentalComposeLibrary::class)
     sourceSets {
         val jvmMain by getting {

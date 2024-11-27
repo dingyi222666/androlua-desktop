@@ -91,7 +91,7 @@ fun WindowScope.AppTheme(
 
     WindowStyle(
         isDarkTheme = useDarkTheme,
-        backdropType = WindowBackdrop.Default,
+        backdropType = WindowBackdrop.Mica,
         frameStyle = WindowFrameStyle(cornerPreference = WindowCornerPreference.ROUNDED),
     )
 

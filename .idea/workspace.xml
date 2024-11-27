@@ -5,11 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ef3eb604-7162-4cdd-b611-e3e802037d9f" name="Changes" comment="feat: 完成文本插入支持">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/editor/src/jvmMain/kotlin/io/github/dingyi222666/compose/editor/text/ListLineTracker.kt" beforeDir="false" afterPath="$PROJECT_DIR$/editor/src/jvmMain/kotlin/io/github/dingyi222666/compose/editor/text/ListLineTracker.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/editor/src/jvmMain/kotlin/io/github/dingyi222666/compose/editor/text/TextModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/editor/src/jvmMain/kotlin/io/github/dingyi222666/compose/editor/text/TextModel.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/editor/src/jvmMain/kotlin/io/github/dingyi222666/compose/editor/text/rope.kt" beforeDir="false" afterPath="$PROJECT_DIR$/editor/src/jvmMain/kotlin/io/github/dingyi222666/compose/editor/text/rope.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/editor/src/jvmTest/kotlin/TextModelTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/editor/src/jvmTest/kotlin/TextModelTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/jvmMain/kotlin/io/github/dingyi222666/androlua/ui/component/Material3AlertDialog.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/jvmMain/kotlin/io/github/dingyi222666/androlua/ui/editor/EditorTabsView.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/jvmMain/kotlin/io/github/dingyi222666/androlua/ui/editor/EditorTabsView.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/jvmMain/kotlin/io/github/dingyi222666/androlua/ui/main/MainFileChooser.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/jvmMain/kotlin/io/github/dingyi222666/androlua/ui/main/MainFileChooser.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/jvmMain/kotlin/io/github/dingyi222666/androlua/ui/resources/theme/Theme.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/jvmMain/kotlin/io/github/dingyi222666/androlua/ui/resources/theme/Theme.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/editor/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/editor/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle.kts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,45 +48,7 @@
         </task>
         <projects_view>
           <tree_state>
-            <expand>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="androlua-desktop" type="f1a62948:ProjectNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="androlua-desktop" type="f1a62948:ProjectNode" />
-                <item name="app" type="2d1252cf:ModuleNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="androlua-desktop" type="f1a62948:ProjectNode" />
-                <item name="app" type="2d1252cf:ModuleNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="androlua-desktop" type="f1a62948:ProjectNode" />
-                <item name="app" type="2d1252cf:ModuleNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-                <item name="compose desktop" type="c8890929:TasksNode$1" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="app" type="f1a62948:ProjectNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="app" type="f1a62948:ProjectNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="app" type="f1a62948:ProjectNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-                <item name="compose desktop" type="c8890929:TasksNode$1" />
-              </path>
-            </expand>
+            <expand />
             <select />
           </tree_state>
         </projects_view>
@@ -96,28 +65,39 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="DEPENDENCY_CHECKER_PROBLEMS_TAB" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
   <component name="ProjectId" id="2LanRRBsR2X3KVSPdnAKRPH13eR" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;corretto-17&quot;,
-    &quot;last_opened_file_path&quot;: &quot;G:/IdeaProjects/amdrolua-desktop/editor/src/jvmTest/kotlin&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Gradle.Main [jvm].executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "jdk.selected.JAVA_MODULE": "corretto-17",
+    "last_opened_file_path": "G:/projects/kotlin_projects/androlua-desktop",
+    "project.structure.last.edited": "Global Libraries",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.lookFeel"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="G:\IdeaProjects\amdrolua-desktop\editor\src\jvmTest\kotlin" />
@@ -132,7 +112,29 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.TextModelTest">
+  <component name="RunManager" selected="Gradle.Main [jvm]">
+    <configuration name="Main [jvm]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/app" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="-DmainClass=io.github.dingyi222666.androlua.MainKt --quiet --stacktrace" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="jvmRun" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
     <configuration name="TextModelTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -154,7 +156,7 @@
       <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
-      <ForceTestExec>true</ForceTestExec>
+      <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
     <configuration name="TextModelTest.testTextDeleteAndGetLineContent" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
@@ -178,7 +180,7 @@
       <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
-      <ForceTestExec>true</ForceTestExec>
+      <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
     <configuration name="TextModelTest.testTextDeleteAndGetLineContent1" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
@@ -202,7 +204,7 @@
       <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
-      <ForceTestExec>true</ForceTestExec>
+      <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
     <configuration name="TextModelTest.testTextDeleteAndGetLineContent2" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
@@ -226,16 +228,8 @@
       <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
-      <ForceTestExec>true</ForceTestExec>
+      <RunAsTest>false</RunAsTest>
       <method v="2" />
-    </configuration>
-    <configuration name="MainKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="io.github.dingyi222666.androlua.MainKt" />
-      <module name="app.jvmMain" />
-      <shortenClasspath name="NONE" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
     </configuration>
     <configuration default="true" type="JetRunConfigurationType">
       <module name="amdrolua-desktop" />
@@ -251,19 +245,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Gradle.TextModelTest.testTextDeleteAndGetLineContent1" />
+      <item itemvalue="Gradle.Main [jvm]" />
       <item itemvalue="Gradle.TextModelTest" />
-      <item itemvalue="Gradle.TextModelTest.testTextDeleteAndGetLineContent" />
+      <item itemvalue="Gradle.TextModelTest.testTextDeleteAndGetLineContent1" />
       <item itemvalue="Gradle.TextModelTest.testTextDeleteAndGetLineContent2" />
-      <item itemvalue="Kotlin.MainKt" />
+      <item itemvalue="Gradle.TextModelTest.testTextDeleteAndGetLineContent" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.Main [jvm]" />
         <item itemvalue="Gradle.TextModelTest" />
         <item itemvalue="Gradle.TextModelTest.testTextDeleteAndGetLineContent1" />
         <item itemvalue="Gradle.TextModelTest.testTextDeleteAndGetLineContent2" />
         <item itemvalue="Gradle.TextModelTest.testTextDeleteAndGetLineContent" />
-        <item itemvalue="Gradle.TextModelTest" />
       </list>
     </recent_temporary>
   </component>

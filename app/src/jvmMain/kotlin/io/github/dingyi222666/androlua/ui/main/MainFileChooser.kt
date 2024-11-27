@@ -1,6 +1,6 @@
 package io.github.dingyi222666.androlua.ui.main
 
-import androidx.compose.material.AlertDialog
+import androidx.compose.material3.AlertDialog
 import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.material3.Button
 import androidx.compose.material3.MaterialTheme
@@ -9,7 +9,6 @@ import androidx.compose.runtime.*
 import io.github.dingyi222666.androlua.ui.common.LocalWindowScope
 import io.github.dingyi222666.androlua.ui.component.FileChooserDialog
 import io.github.dingyi222666.androlua.ui.component.FileChooserDialogMode
-import io.github.dingyi222666.androlua.ui.component.Material3AlertDialog
 import kotlinx.coroutines.launch
 
 /**
@@ -62,7 +61,7 @@ fun MainFileChooser(state: MainState, openState: Boolean, onDismissRequest: () -
 @Composable
 fun OpenErrorProjectDialog(openState: Boolean, onDismissRequest: () -> Unit) {
     if (openState) {
-        Material3AlertDialog(onDismissRequest = onDismissRequest,
+        AlertDialog(onDismissRequest = onDismissRequest,
             shape = MaterialTheme.shapes.medium,
             title = { Text("打开项目失败") },
             text = { Text("你可能打开的不是一个AndroLua+项目呢") },

@@ -1,17 +1,19 @@
-import org.jetbrains.compose.compose
 import org.jetbrains.compose.desktop.application.dsl.TargetFormat
 
 plugins {
     kotlin("multiplatform")
-    id("org.jetbrains.compose")
+    alias(libs.plugins.jetbrainsCompose)
+    alias(libs.plugins.compose.compiler)
 }
 
 group = "io.github.dingyi222666"
 version = "1.0-SNAPSHOT"
 
-
 kotlin {
-    @OptIn(org.jetbrains.compose.ExperimentalComposeLibrary::class)
+    jvmToolchain(17)
+
+    jvm()
+    
     sourceSets {
         val jvmMain by getting {
             dependencies {
@@ -21,13 +23,13 @@ kotlin {
                 implementation(compose.foundation)
                 implementation(compose.materialIconsExtended)
 
-                implementation("com.fifesoft:rsyntaxtextarea:${extra["rsyntaxtextarea.version"]}")
-                implementation("org.json:json:${extra["json.version"]}")
-                implementation("net.java.dev.jna:jna:${extra["jna.version"]}")
-                implementation("net.java.dev.jna:jna-platform:${extra["jna.version"]}")
-                implementation("cafe.adriel.bonsai:bonsai-core:${extra["bonsai.version"]}")
-                implementation("cafe.adriel.bonsai:bonsai-file-system:${extra["bonsai.version"]}")
-                implementation("com.mayakapps.compose:window-styler:${extra["window-styler.version"]}")
+                implementation(libs.rsyntaxtextarea)
+                implementation(libs.json)
+                implementation(libs.jna)
+                implementation(libs.jna.platform)
+                implementation(libs.bonsai)
+                implementation(libs.bonsai.fileSystem)
+                implementation(libs.window.styler)
             }
         }
         val jvmTest by getting
@@ -35,7 +37,6 @@ kotlin {
 
 
 }
-
 
 compose.desktop {
     application {
@@ -52,3 +53,5 @@ compose.desktop {
         }
     }
 }
+
+composeCompiler {}
